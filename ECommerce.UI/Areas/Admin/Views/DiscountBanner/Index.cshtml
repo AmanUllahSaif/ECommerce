@@ -1,0 +1,34 @@
+﻿<div id="crtDiscBanner">
+    @Html.Action("CreateDiscountBanner", "DiscountBanner")
+</div>
+@Html.Action("ListDiscountBannerPartial", "DiscountBanner")
+
+
+@section Scripts{
+    <script src="@Url.Content("~/")Areas/Admin/assets/js/jscolor.js"></script>
+    <script type="text/javascript">
+        function BindColorPicker() {
+            debugger;
+            var txtClr = document.getElementById('TextColor');
+            var picker = new jscolor(txtClr);
+            //picker.fromHSV(360 / 100 * i, 100, 100);
+        }
+        function ValidateFiles() {
+            debugger;
+            var files = $('.file');
+            var isValid = false;
+            for (var i = 0; i < files.length; i++) {
+                var fileContent = $(files[i]).prop("files");
+                if (fileContent.length > 0) {
+                    isValid = true;
+                } else {
+                    isValid = false;
+                }
+            }
+            if (!isValid) {
+                alert("Please upload images.");
+            }
+            return isValid;
+        }
+    </script>
+}

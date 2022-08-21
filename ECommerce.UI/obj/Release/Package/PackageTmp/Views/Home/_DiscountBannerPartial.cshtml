@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Ecommerce.DAL.SaleBanner>
+    <style type="text/css">
+        .w3ls-add-grids.w3ls-add-grids-mdl{
+
+        }
+    </style>
+<div class="add-products" style="margin-top:2em">
+    <div class="container">
+        <div class="add-products-row">
+            @*<div class="w3ls-add-grids">
+                <a href="products1.html">
+                    <h4>TOP 10 TRENDS FOR YOU FLAT <span>20%</span> OFF</h4>
+                    <h6>Shop now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+                </a>
+            </div>*@
+            @if (Model != null && Model.Count() > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="w3ls-add-grids w3ls-add-grids-mdl" style="background:url(@Url.Content(item.ImageUrl))no-repeat 0px 0px;">
+                        <a href="@item.PageUrl">
+                            <h4 style="color:#@item.TextColor">@item.Text</h4>
+                            <h6 style="color:#@item.TextColor">Shop now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+                        </a>
+                    </div>
+                }
+            }
+           
+            <div class="clerfix"> </div>
+        </div>
+    </div>
+</div>

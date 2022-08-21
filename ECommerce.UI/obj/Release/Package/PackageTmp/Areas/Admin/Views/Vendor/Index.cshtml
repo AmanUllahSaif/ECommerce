@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Ecommerce.DAL.Vendor>
+@{
+    ViewBag.Title = "Index";
+}
+
+@using PagedList
+@using PagedList.Mvc
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Vendors</h4>
+                <div class="col-md-2 pull-right text-right">
+                    @Ajax.ActionLink("Create New", "Create", "Vendor", new AjaxOptions { UpdateTargetId = "create", OnSuccess = "ShowCreatePopup()" }, new { @class = "btn btn-success btn-sm" })
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        @if (Model != null && Model.Count() > 0)
+                        {
+                            int i = 1;
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@i</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.Contact</td>
+                                        <td>
+                                            @Ajax.ActionLink("Edit", "Edit", "Vendor", new { Id=item.Id}, new AjaxOptions { UpdateTargetId = "edit", OnSuccess = "ShowEditPopup()" }, new { @class = "btn btn-primary btn-sm" })
+                                            @Html.ActionLink("Delete", "Delete", "Vendor", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5" class="text-right">
+                                        @Html.PagedListPager((IPagedList)Model, Page => Url.Action("Index", new { Page }),new PagedListRenderOptions() {Display=PagedListDisplayMode.IfNeeded})
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="5" class="text-danger text-center">
+                                    No record found.
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="createModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        @using (Html.BeginForm("Create", "Vendor"))
+        {
+             <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create Vendor</h4>
+                </div>
+                <div class="modal-body" id="create">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div id="editModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        @using (Html.BeginForm("Edit", "Vendor"))
+        {
+             <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Vendor</h4>
+                </div>
+                <div class="modal-body" id="edit">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        function ShowCreatePopup() {
+            $('#createModal').modal('show');
+        }
+        function ShowEditPopup() {
+            $('#editModal').modal('show');
+        }
+    </script>
+}

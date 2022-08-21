@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Ecommerce.DAL.CustomShirtsOrder>
+
+@using Ecommerce.DAL.Enums
+@if (Model != null && Model.Count() > 0)
+{
+    int i = 1;
+    foreach (var item in Model)
+    {
+            decimal totalPrice = item.BackPrice.GetValueOrDefault() + item.FrontPrice.GetValueOrDefault() + item.ShirtPrice;
+        <li class="cart-Item" style="height:70px">
+            <div class="col-sm-3">
+                <img src="/CustomShirts/crew_front.png" class="img-responsive" />
+            </div>
+            <div class="col-sm-5">
+                    @switch (item.Type)
+                    {
+                        case (int)ShirtType.ShortSleeveRound:
+                            <label>Short Sleeve Round Neck</label>
+                            break;
+                        case (int)ShirtType.LongSleeveRound:
+                            <label>Long Sleeve Round Neck</label>
+                            break;
+                        case (int)ShirtType.ShortSleeveV:
+                            <label>Short Sleeve V Neck</label>
+                            break;
+                        case (int)ShirtType.LongSleeveV:
+                            <label>Long Sleeve V Neck</label>
+                            break;
+                        default:
+                            break;
+                    }
+
+                <br />
+                @item.Size
+                <br />
+                @item.Quantity X
+                <label>
+                @totalPrice
+                </label>
+
+            </div>
+            <div class="col-sm-4">
+                <a href="javascript:;" data-id="@i" class="delcustom fa fa-trash-o" style="margin-top:10px;float:right"></a>
+            </div>
+        </li>
+        i++;
+    }
+}
+
+
+

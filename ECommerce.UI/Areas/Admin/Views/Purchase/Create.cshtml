@@ -1,0 +1,292 @@
+﻿@model IEnumerable<ECommerce.UI.Models.CartViewModel>
+@{
+    ViewBag.Title = "Create";
+    int i = 0;
+}
+
+<div class="printPanel">
+    @using (Html.BeginForm("Create", "Purchase", FormMethod.Post))
+    {
+        <div class="panel panel-default ">
+            <!-- <div class="panel-heading">
+                <h4>Invoice</h4>
+            </div> -->
+            <div class="panel-body">
+                <div class="clearfix">
+                    <div class="col-md-12">
+                        @Html.ValidationSummary(true)
+                    </div>
+                    <div class="pull-left">
+                        <h4>
+                            Invoice # <br>
+                            @*<strong>@Model.Id</strong>*@
+                        </h4>
+                    </div>
+                    <div class="pull-right">
+                        <h4 class="text-right"><img src="@Url.Content("~/theme/images/urz2.png")" alt="Avant" style="height:75px"></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 style="background: #85c744; padding: 5px 10px; color: #fff; border-radius: 1px; margin: 20px 0 20px; text-align:center">Vendor Invoice</h3>
+                        <div class="pull-left">
+                            @Html.DropDownList("Vendore", new SelectList(ViewBag.Vendors, "Id", "Name"), "Select Vendor", new { @class = "form-control col-sm-2" })
+                        </div>
+                        <div class="pull-right">
+                            <ul class="text-right list-unstyled">
+                                <li><strong>Date:</strong> @DateTime.UtcNow.ToString("dd-MMMM-yyyy")</li>
+                                <li>
+                                    @Ajax.ActionLink(" ", "Add", "Purchase", new AjaxOptions { UpdateTargetId = "rld", OnSuccess = "ShowModal()" }, new { @class = "fa fa-2x fa-plus-circle", style = "text-decoration:none" })
+                                </li>
+                                @*<li><strong>Due:</strong> @Model.CreatedOn.AddDays(3).ToString("dd-MMMM-yyyy")</li>*@
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Item</th>
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                @if (Model != null && Model.Count() > 0)
+                                {
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            i++;
+                                            <tr>
+                                                <td>@i</td>
+                                                <td>@item.Product.Name</td>
+                                                <td>
+                                                    @foreach (var comb in item.AttributeCombination.AttribCombinationDetails)
+                                                    {
+                                                        <labe>@comb.AttributeValue.Value , </labe>
+                                                    }
+                                                </td>
+                                                <td>@item.Quantity</td>
+                                                <td>$ @item.PurchasePrice</td>
+                                                <td>$ @(item.PurchasePrice * item.Quantity)</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="6" class="text-center text-info"> No Item in Cart.</td>
+                                    </tr>
+                                }
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="border-radius: 0px;">
+                    <div class="col-md-3 col-md-offset-9">
+                        <hr>
+                        <h3 class="text-right">USD @Model.Sum(x => x.Quantity * x.PurchasePrice)</h3>
+                    </div>
+                </div>
+                <div class="panel-footer hidden-print">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-inverse">Save</button>
+                        <a href="javascript:;" class="btn btn-inverse btnPrint"><i class="fa fa-print"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        @using (Html.BeginForm("Add", "Purchase"))
+        {
+                    <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Item</h4>
+                </div>
+                <div class="modal-body" id="rld">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        $('.btnPrint').click(function () {
+            var styleSheets = $('link');
+            var pWin = window.open('', 'Invoice Print', 'height=600,width=800');
+            pWin.document.write('<html><head><title>my div</title>');
+            for (var i = 0; i < styleSheets.length; i++) {
+                var linkTag = "<link rel='stylesheet' type='text/css' href='" + $(styleSheets[i]).attr('href') + "' />";
+                pWin.document.write(linkTag);
+            }
+            pWin.document.write('</head><body >');
+            pWin.document.write($('.printPanel').html());
+            pWin.document.write('</body></html>');
+            setTimeout(function () {
+                pWin.print();
+            }, 1000)
+            $(pWin.document).ready(function () {
+                //pWin.print();
+            });
+        })
+        //--------- Show Popup -------------
+        function ShowModal() {
+            $('#myModal').modal('show')
+        }
+        //--------- Creat Product -------
+        $(document).on('change', '#Head', function () {
+            getNavCategories();
+        });
+
+        $(document).on('change', '#Category', function () {
+            getLinks();
+        })
+
+        function getLinks() {
+            var headVal = $('#Category').val();
+            if (headVal) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/category/GetLinks/' + headVal,
+                    success: function (data) {
+
+                        if (data == false) {
+                            $('#CategoryId').html('<option>Select Category</option>')
+                        } else {
+                            var htmlcate = '<option>Select Category</option>';
+                            for (var i = 0; i < data.length; i++) {
+                                htmlcate += '<option value="' + data[i].Id + '">' + data[i].Name + '</option>'
+                            }
+                            $('#Product_CategoryId').html(htmlcate);
+                        }
+                    }
+                })
+            } else {
+                $('#Links').html('<option>Select Category</option>')
+            }
+
+        }
+
+        function getNavCategories() {
+            var headVal = $('#Head').val();
+            if (headVal) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/category/GetNavCategories/' + headVal,
+                    success: function (data) {
+                        if (data == false) {
+                            $('#Category').html('<option>Select Navigation Category</option>')
+                        } else {
+                            var htmlcate = '<option>Select Navigation Category</option>';
+                            for (var i = 0; i < data.length; i++) {
+                                htmlcate += '<option value="' + data[i].Id + '">' + data[i].Name + '</option>'
+                            }
+                            $('#Category').html(htmlcate);
+                        }
+                    }
+                })
+            } else {
+                $('#Category').html('<option>Select Navigation Category</option>')
+            }
+
+        }
+
+        $(document).on('change', '#Product_CategoryId', function () {
+            //debugger;
+            var category = $(this).val();
+            if (category) {
+                var u = '/admin/product/Listing/' + category;
+                $.ajax({
+                    type: 'GET',
+                    url: u,
+                    success: function (data) {
+                        $('#tbl').html(data);
+                    }
+                });
+
+                var w = '/admin/product/ProductsByCategory/' + category;
+                $.ajax({
+                    type: 'GET',
+                    url: w,
+                    success: function (data) {
+                        if (data == false) {
+                            $('#Product_Id').html('<option>Select Product</option>')
+                        } else {
+                            var opt = '<option>Select Product</option>';
+                            for (var i = 0; i < data.length; i++) {
+                                opt += '<option value="' + data[i].Id + '">' + data[i].Name + '</option>'
+                            }
+                            $('#Product_Id').html(opt);
+                        }
+                    }
+                });
+            }
+        });
+        // ------------- Stock Add and Remove ------------
+        var stockCount = 0;
+        $(document).on('click', '.btnRwAdd', function () {
+            var cloneRow = $(this).closest('tr').clone();
+            $(this).closest('tbody').append(cloneRow);
+            stockCount++;
+            renameStock();
+        })
+
+        $(document).on('click', '.btnRwRmv', function () {
+            if (stockCount > 0) {
+                $(this).closest('tr').remove();
+                stockCount--;
+                renameStock()
+            }
+        })
+
+        function renameStock() {
+            var trs = $('#rowContainer').find('tr');
+            for (var i = 0; i < trs.length; i++) {
+                var tr = $(trs[i]);
+                debugger;
+                var qty = tr.find('.qty');
+                var Name = 'Stocks[' + i + ']';
+                var replaceName;
+                if (i > 0) {
+                    replaceName = 'Stocks[' + (i - 1) + ']';
+                } else {
+                    replaceName = 'Stocks[' + i + ']';
+                }
+                var oldAttrib = tr.find('.attribId');
+                var oldValue = tr.find('.attribVal');
+                var valid = tr.find('.attribVld');
+                for (var j = 0; j < oldAttrib.length; j++) {
+
+                    $(oldValue[j]).attr('name', $(oldValue[j]).attr('name').replace(replaceName, Name));
+                    $(valid[j]).attr('data-valmsg-for', $(valid[j]).attr('data-valmsg-for').replace(replaceName, Name))
+                    $(oldAttrib[j]).attr('name', $(oldAttrib[j]).attr('name').replace(replaceName, Name));
+                }
+                $(qty).attr('name', $(qty).attr('name').replace(replaceName, Name));
+
+            }
+        }
+    </script>
+}

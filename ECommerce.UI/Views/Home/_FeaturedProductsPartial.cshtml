@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Ecommerce.DAL.Product>
+
+
+@if (Model != null && Model.Count() > 0)
+{
+    <div class="welcome">
+        <div class="container">
+            <div class="welcome-info">
+                <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                    <h3 class="w3ls-title">Featured Products</h3>
+                    <div id="owl-demo" class="owl-carousel">
+                        @foreach (var item in Model)
+                        {
+                            <div class="item">
+                                <div class="glry-w3agile-grids agileits">
+                                    <a href="@Url.Content("~/Shopping/ProductDetail/"+item.Id)"><img src="@Url.Content("~"+item.ProductImages.FirstOrDefault(x => x.IsActive == true).Url)" alt="img"></a>
+                                    <div class="view-caption agileits-w3layouts">
+                                        <h4><a href="@Url.Content("~/Shopping/ProductDetail/"+item.Id)">@item.Name</a></h4>
+                                        <p>@item.Description</p>
+                                        <form action="" method="post">
+                                            <a href="@Url.Content("~/Shopping/ProductDetail/"+item.Id)" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Detail</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+
+                    <div id="myTabContent" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                            <div class="tabcontent-grids">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

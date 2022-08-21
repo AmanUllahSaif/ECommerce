@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Ecommerce.DAL.CustomShirtsOrder>
+
+@using Ecommerce.DAL.Enums
+
+
+    @if (Model != null && Model.Count() > 0)
+    {
+        int i = 1;
+        <div class="table-responsive">
+            <table class="table table-cart">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th style="width:20%">Discription</th>
+                        <th>Color</th>
+                        <th>Price</th>
+                        <th>Front Price</th>
+                        <th>Back Price</th>
+                        <th>Size</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                {
+                        <tr>
+                            <td><img src="/CustomShirts/crew_front.png" class="img-responsive img-rounded" /></td>
+                            <td>
+                                @switch (item.Type)
+                    {
+                        case (int)ShirtType.ShortSleeveRound:
+                                        <label>Short Sleeve Round Neck</label>
+                                        break;
+                                    @*case (int)ShirtType.LongSleeveRound:
+                                        <label>Long Sleeve Round Neck</label>
+                                        break;*@
+                                    case (int)ShirtType.ShortSleeveV:
+                                        <label>Short Sleeve V Neck</label>
+                                        break;
+                                    @*case (int)ShirtType.LongSleeveV:
+                                        <label>Long Sleeve V Neck</label>
+                                        break;*@
+                                    default:
+                                        break;
+                                }
+
+                            </td>
+                            <td>
+                                <div style="width:20px;height:20px;border:1px Solid;background-color:@item.ShirtColor"></div>
+                            </td>
+                            <td>
+                                @item.ShirtPrice
+                                $
+                            </td>
+                            <td>@item.FrontPrice.GetValueOrDefault().ToString("#.00") $</td>
+                            <td>@item.BackPrice.GetValueOrDefault().ToString("#.00") $</td>
+                            <td>
+                                @switch (item.Size)
+                               {
+                                        case (int)ShirtSizeType.LG:
+                                                    <label>Large</label>
+                                                    break;
+
+                                        case (int)ShirtSizeType.MD:
+                                                    <label>Medium</label>
+                                                    break;
+
+                                        case (int)ShirtSizeType.SM:
+                                                    <label>Small</label>
+                                                    break;
+                                        case (int)ShirtSizeType.XL:
+                                                    <label>Extra Small</label>
+                                                    break;
+                                        default:
+                                                    break;
+                                            }
+
+                            </td>
+                            <td>@item.Quantity</td>
+                            <td>@((item.FrontPrice.GetValueOrDefault()+ item.BackPrice.GetValueOrDefault()+ item.ShirtPrice)*item.Quantity) $</td>
+                            <td>
+                                <a href="javaScript:;" class="fa fa-2x fa-trash-o cartDelCustm" data-id="@i"></a>
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+

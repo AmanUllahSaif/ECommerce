@@ -1,0 +1,172 @@
+﻿@model IEnumerable<Ecommerce.DAL.Category>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="rld">
+    @Html.Action("Create", "Category")
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4>Design Navigation</h4>
+    </div>
+    <div class="panel-body">
+
+        <div class="tree">
+
+            @if (Model != null && Model.Count() > 0)
+            {
+                <div class="clearfix"></div>
+                foreach (var item in Model)
+                {
+                    var childs = item.Childs.Where(x => x.IsActive == true);
+                    <div class="col-sm-4">
+                        <ul>
+                            <li>
+                                <span><i class="icon-calendar"></i> @item.Name <a href="@Url.Content("~/admin/category/delete/"+item.Id)" class="fa fa-trash-o pull-right"></a> @Ajax.ActionLink(" ", "Edit", "Category", new { Id = item.Id }, new AjaxOptions { UpdateTargetId = "rld", OnSuccess = "setOptions" }, new { @class = "fa fa-pencil pull-right" })</span>
+                                <ul>
+                                    @foreach (var child in childs)
+                                    {
+                                        var links = child.Childs.Where(x => x.IsActive == true);
+                                        <li>
+                                            <span class="">
+                                                <i class=""></i>
+                                                @child.Name
+                                                <a class="fa fa-trash-o pull-right" href="@Url.Content("~/admin/category/delete/"+child.Id)" ></a>
+                                                @Ajax.ActionLink(" ", "Edit", "Category", new { Id = child.Id }, new AjaxOptions { UpdateTargetId = "rld", OnSuccess = "setOptions" }, new { @class = "fa fa-pencil pull-right" })
+                                            </span>
+
+                                            <ul>
+                                                @foreach (var link in links)
+                                                {
+                                                    <li>
+                                                        <span><i class="icon-time"></i> @link.Name <a href="@Url.Content("~/admin/category/delete/"+link.Id)" class="fa fa-trash-o pull-right"></a> @Ajax.ActionLink(" ", "Edit", "Category", new { Id = link.Id }, new AjaxOptions { UpdateTargetId = "rld", OnSuccess = "setOptions" }, new { @class = "fa fa-pencil pull-right" })</span>
+                                                    </li>
+                                                }
+
+                                            </ul>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                }
+
+            }
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).on('change', '#Type', function () {
+            var type = $(this).val();
+            if (type) {
+                switch (parseInt(type)) {
+                    case 1:
+                        $('.navparent').hide();
+                        break;
+                    case 2:
+                        $('.navparent').hide();
+                        $('#navHead').show();
+                        break;
+                    case 3:
+                        $('.navparent').hide();
+                        $('#navHead').show();
+                        $('#navcate').show();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        })
+
+        $(document).on('change', '#Head, #Type', function () {
+            var type = $('#Type').val();
+            if (type) {
+                switch (parseInt(type)) {
+                    case 1:
+                        $('#hdnparentId').val('');
+                    case 2:
+                        $('#hdnparentId').val($('#Head').val());
+                        break;
+                    case 3:
+                        $('#hdnparentId').val($('#Category').val());
+                        getNavCategories();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        })
+
+        $(document).on('change', '#Category', function () {
+            $('#hdnparentId').val($('#Category').val());
+        })
+
+        function getNavCategories() {
+            var headVal = $('#Head').val();
+            if (headVal) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/category/GetNavCategories/' + headVal,
+                    success: function (data) {
+                        if (data == false) {
+                            $('#Category').html('<option>Select Navigation Category</option>')
+                        } else {
+                            var htmlcate = '<option>Select Navigation Category</option>';
+                            for (var i = 0; i < data.length; i++) {
+                                htmlcate += '<option value="' + data[i].Id + '">' + data[i].Name + '</option>'
+                            }
+                            $('#Category').html(htmlcate);
+                        }
+                    }
+                })
+            } else {
+                $('#Category').html('<option>Select Navigation Category</option>')
+            }
+
+        }
+        $(function () {
+            $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
+            $('.tree li.parent_li > span').on('click', function (e) {
+                var children = $(this).parent('li.parent_li').find(' > ul > li');
+                if (children.is(":visible")) {
+                    children.hide('fast');
+                    $(this).attr('title', 'Expand this branch').find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
+                } else {
+                    children.show('fast');
+                    $(this).attr('title', 'Collapse this branch').find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
+                }
+                e.stopPropagation();
+            });
+        });
+
+        function setOptions() {
+            var type = $('#Type').val();
+            if (type) {
+                switch (parseInt(type)) {
+                    case 1:
+                        $('.navparent').hide();
+                        break;
+                    case 2:
+                        $('.navparent').hide();
+                        $('#navHead').show();
+                        break;
+                    case 3:
+                        $('.navparent').hide();
+                        $('#navHead').show();
+                        $('#navcate').show();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+    </script>
+}
+

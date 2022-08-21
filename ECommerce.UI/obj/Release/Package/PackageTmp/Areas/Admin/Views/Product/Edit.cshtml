@@ -1,0 +1,264 @@
+﻿@model Ecommerce.DAL.Product
+@{
+    ViewBag.Title = "Edit";
+}
+@using Ecommerce.DAL
+
+@using (Html.BeginForm("Edit", "Product", FormMethod.Post, new { @class = "", @enctype = "multipart/form-data" }))
+{
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4>Edit Product</h4>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-3 navparent" id="navHead">
+                        @Html.HiddenFor(x => x.Id)
+                        @Html.Label("Heading", new { @class = "control-label", @for = "Head" })
+                        @Html.DropDownList("Head", new SelectList(ViewBag.NavigationHeading, "Id", "Name"), "Select Navigation Heading", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-3 navparent" id="navcate">
+                        @Html.Label("Category", new { @class = "control-label", @for = "Category" })
+                        @Html.DropDownList("Category", Enumerable.Empty<SelectListItem>(), "Select Navigation Category", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-3">
+                        @Html.LabelFor(x => x.CategoryId, new { @class = "control-label" })
+                        @Html.DropDownListFor(x => x.CategoryId, new SelectList(ViewBag.Categories, "Id", "Name"), "Select Category", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.CategoryId)
+                    </div>
+                    <div class="col-sm-3">
+                        @Html.LabelFor(x => x.Name, new { @class = "control-label" })
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Name)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        @Html.LabelFor(x => x.Price, new { @class = "control-label", @for = "Price" }) ($)
+                        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-3" id="discount" style="display:none;">
+                        @Html.LabelFor(x => x.Discount, new { @class = "control-label", @for = "Discount" }) (%)
+                        @Html.TextBoxFor(x => x.Discount, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <div class="col-sm-3">
+                        @Html.LabelFor(x => x.Weight, new { @class = "control-label", @for = "Discount" })
+                        @Html.TextBoxFor(x => x.Weight, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Weight)
+                    </div>
+                    <div class="col-sm-2">
+                        @Html.LabelFor(x => x.Featured, new { @class = "control-label" })
+                        @Html.CheckBoxFor(x => x.Featured)
+                        @Html.ValidationMessageFor(x => x.Featured)
+                    </div>
+                    <div class="col-sm-2">
+                        @Html.LabelFor(x => x.Sale, new { @class = "control-label" })
+                        @Html.CheckBoxFor(x => x.Sale, new { id = "salecheckbox" })
+                        @Html.ValidationMessageFor(x => x.Sale)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-8">
+                        @Html.LabelFor(x => x.Description, new { @class = "control-label" })
+                        @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Description)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-12" id="imageContainer">
+                        @if (ViewBag.images != null)
+                        {
+                            int i = 0;
+                            foreach (ProductImage item in ViewBag.images)
+                            {
+                                <div class="col-sm-3">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                            <img src="@Url.Content(item.Url)" />
+                                        </div>
+                                        <input class="imgid" type="hidden" value="@item.Id" name="imageId[@i]" />
+                                        <div class="buttons">
+                                            <a href="javascript:;" class="btn btn-sm btn-success btnaddimg">Add</a>
+                                            <a href="javascript:;" class="btn btn-sm btn-danger btndelimg">Del</a>
+                                        </div>
+                                        <div>
+                                            <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" class="file" name="productimage[0]"></span>
+                                            <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            }
+                        }
+                        else
+                        {
+                            <div class="col-sm-3">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                        <input class="imgid" type="hidden" value="" name="imageId[0]" />
+                                    </div>
+                                    <div class="buttons">
+                                        <a href="javascript:;" class="btn btn-sm btn-success btnaddimg">Add</a>
+                                        <a href="javascript:;" class="btn btn-sm btn-danger btndelimg">Del</a>
+                                    </div>
+                                    <div>
+                                        <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" class="file" name="productimage[0]"></span>
+                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" id="tbl">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer text-right">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    <input type="reset" value="Cancel" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    <script type="text/javascript">
+
+        $(function () {
+            if ($('#salecheckbox').is(':checked')) {
+                $('#discount').show();
+            }
+        });
+
+
+
+        $('#Head').change(function () {
+            getNavCategories();
+        });
+
+        $('#Category').change(function () {
+            getLinks();
+        })
+
+        function getLinks() {
+            var headVal = $('#Category').val();
+            if (headVal) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/category/GetLinks/' + headVal,
+                    success: function (data) {
+                        if (data == false) {
+                            $('#CategoryId').html('<option>Select Category</option>')
+                        } else {
+                            var htmlcate = '<option>elect Category</option>';
+                            for (var i = 0; i < data.length; i++) {
+                                htmlcate += '<option value="' + data[i].Id + '">' + data[i].Name + '</option>'
+                            }
+                            $('#CategoryId').html(htmlcate);
+                        }
+                    }
+                })
+            } else {
+                $('#Links').html('<option>elect Category</option>')
+            }
+
+        }
+
+        function getNavCategories() {
+            var headVal = $('#Head').val();
+            if (headVal) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/category/GetNavCategories/' + headVal,
+                    success: function (data) {
+                        if (data == false) {
+                            $('#Category').html('<option>Select Navigation Category</option>')
+                        } else {
+                            var htmlcate = '<option>Select Navigation Category</option>';
+                            for (var i = 0; i < data.length; i++) {
+                                htmlcate += '<option value="' + data[i].Id + '">' + data[i].Name + '</option>'
+                            }
+                            $('#Category').html(htmlcate);
+                        }
+                    }
+                })
+            } else {
+                $('#Category').html('<option>Select Navigation Category</option>')
+            }
+
+        }
+
+        //$('#CategoryId').change(function () {
+        //    debugger;
+        //    var category = $(this).val();
+        //    if (category) {
+        //        var u = '/admin/product/Listing/' + category;
+        //        $.ajax({
+        //            type: 'GET',
+        //            url: u,
+        //            success: function (data) {
+        //                $('#tbl').html(data);
+        //            }
+        //        });
+        //    }
+        //})
+        // ----------- Image Add and Remove ---------------
+        var imageCount = 0;
+        $(document).on('click', '.btnaddimg', function () {
+            var cloneEle = $(this).closest('.col-sm-3').clone();
+            cloneEle.find('img').remove();
+            cloneEle.find('.file').val('');
+            cloneEle.find('.imgid').val('0');
+            $('#imageContainer').append(cloneEle);
+
+            imageCount++;
+            renameImage();
+        })
+        $(document).on('click', '.btndelimg', function () {
+            if (imageCount > 0) {
+                $(this).closest('.col-sm-3').remove();
+                imageCount--;
+                renameImage();
+            }
+        })
+        function renameImage() {
+            var files = $('.file');
+            var imges = $('.imgid');
+            for (var i = 0; i < files.length; i++) {
+                $(files[i]).attr('name', 'productimage[' + i + ']');
+                $(imges[i]).attr('name', 'imageId[' + i + ']');
+            }
+        }
+        // ------------- Show discount textbox on sale checked ------------
+
+        $('#salecheckbox').click(function () {
+            var $this = $(this);
+            if ($this.is(':checked')) {
+                $('#discount').show();
+            } else {
+                $('#discount').hide();
+            }
+        });
+    </script>
+}

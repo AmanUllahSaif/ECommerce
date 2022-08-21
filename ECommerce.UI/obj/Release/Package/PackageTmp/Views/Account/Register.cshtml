@@ -1,0 +1,117 @@
+﻿@model ECommerce.UI.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+<style>
+    .hideBus {
+        display: none;
+    }
+</style>
+@Html.ValidationSummary("", new { @class = "text-danger" })
+<div class="login-page">
+    <h3 class="w3ls-title w3ls-title1">Create your account</h3>
+    <div class="login-body">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data", id="rgstr" }))
+        {
+            @Html.AntiForgeryToken();
+            @Html.TextBoxFor(m => m.Name, new { @class = "user", placeholder = "Enter your Name" })
+            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "user", placeholder = "Enter your email" })
+            @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.BussinesName, new { @class = "user hideBus", placeholder = "Enter your Bussines Name" })
+            @Html.ValidationMessageFor(x => x.BussinesName, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Address, new { @class = "user hideBus", placeholder = "Enter your Bussines Address" })
+            @Html.ValidationMessageFor(x => x.Address, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.ContactNumber, new { @class = "user hideBus", placeholder = "Enter your Contact no." })
+            @Html.ValidationMessageFor(x => x.ContactNumber, "", new { @class = "text-danger" })
+            @Html.PasswordFor(m => m.Password, new { @class = "lock", placeholder = "Password" })
+            @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "lock", placeholder = "Confirm Password" })
+            @Html.ValidationMessageFor(x => x.ConfirmPassword, "", new { @class = "text-danger" })
+
+            <input type="file" id="logo" class="hideBus" name="logo" style="display:none" />
+            <span class="text-danger" id="fileValidtaion"></span>
+            <input type="submit" value="Sign Up ">
+            <div class="forgot-grid">
+                <label class="pull-left">
+                @Html.CheckBoxFor(x => x.IsBussinesAccount)<i></i>Bussines Account</label>
+                @*<div class="forgot">
+                        <a href="#">Forgot Password?</a>
+                    </div>*@
+                <div class="clearfix"> </div>
+            </div>
+        }
+        <h6>Already have an account? <a href="@Url.Content("~/account/login")">Login Now »</a> </h6>
+    </div>
+</div>
+@*<h2>@ViewBag.Title.</h2>
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h4>Create a new account.</h4>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Register" />
+            </div>
+        </div>
+    }*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Client Scripts/MvcFoolproofValidation.min.js"></script>
+    <script src="~/Client Scripts/MvcFoolproofJQueryValidation.min.js"></script>
+    <script src="~/Client Scripts/mvcfoolproof.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        $('#IsBussinesAccount').on('click', function () {
+            if ($(this).is(':checked')) {
+                $('.hideBus').show();
+            } else {
+                $('.hideBus').hide();
+            }
+        })
+        function ValidateLogo() {
+            if ($('#IsBussinesAccount').is(':checked')) {
+                var valid = true;
+                var file = $('#logo')[0].files[0];
+                if (!file) {
+                    valid = false;
+                    $('#fileValidtaion').html("The logo is required.");
+                    return valid;
+                } else {
+                    $('#fileValidtaion').html("");
+                }
+                if (file.type.indexOf('image') == -1) {
+                    valid = false;
+                    $('#fileValidtaion').html("Logo should be image file.");
+                } else {
+                    $('#fileValidtaion').html("");
+                }
+                return valid;
+            }
+            return true;
+        }
+        $('#logo').change(ValidateLogo)
+        $('#rgstr').submit(ValidateLogo)
+    </script>
+}

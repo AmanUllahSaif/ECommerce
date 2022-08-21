@@ -1,0 +1,56 @@
+﻿@model Ecommerce.DAL.CustomShirt
+@{
+    ViewBag.Title = "Custom Shirt";
+}
+
+@using Ecommerce.DAL.Enums
+@using (Html.BeginForm())
+{
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4>Create Cutom Shirt</h4>
+        </div>
+        <div class="panel-body">
+            <div class="col-sm-12">
+                <div class="col-sm-4">
+                    @Html.LabelFor(x => x.Type, new { @class = "control-label"})
+                    @Html.DropDownListFor(x => x.Type, EnumHelper.GetSelectList(typeof(ShirtType)), "Select Shirt Type", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Type)
+                </div>
+                <div class="col-sm-4">
+                    @Html.LabelFor(x => x.ShirtPrice, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.ShirtPrice, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ShirtPrice)
+                </div>
+                <div class="col-sm-4">
+                    @Html.LabelFor(x => x.FrontPrintPrice, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.FrontPrintPrice, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.FrontPrintPrice)
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-4">
+                    @Html.LabelFor(x => x.BackPrintPrice, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.BackPrintPrice, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.BackPrintPrice)
+                </div>
+                <div class="col-sm-4">
+                    @Html.LabelFor(x => x.Size, new { @class = "control-label" })
+                    @Html.DropDownListFor(x => x.Size, EnumHelper.GetSelectList(typeof(ShirtSizeType)), "Select Shirt Size", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Size)
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer text-right">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    <input type="reset" value="Cancel" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

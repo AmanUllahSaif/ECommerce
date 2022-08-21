@@ -1,0 +1,49 @@
+﻿@model ECommerce.UI.Models.AttributeViewModel
+
+@using Ecommerce.DAL.Enums
+
+@using (Ajax.BeginForm("Update", "Attribute", new AjaxOptions { OnSuccess = "CloseEdit()", HttpMethod = "POST", UpdateTargetId = "tbl" }))
+{
+    int i = 0;
+    <div class="row">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="col-sm-6">
+                <input type="hidden" value="@Model.Values.Count" id="hdnVals" />
+                @Html.HiddenFor(x => x.Attribute.CategoryId, new { id = "hdnCategoryId" })
+                @Html.HiddenFor(x =>x.Attribute.Id)
+                @Html.LabelFor(x => x.Attribute.Type, new { @class = "control-label" })
+                @Html.DropDownListFor(x => x.Attribute.Type, EnumHelper.GetSelectList(typeof(AttributeType)), new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Attribute.Type)
+            </div>
+            <div class="col-sm-6">
+                @Html.LabelFor(x => x.Attribute.Name, new { @class = "control-label" })
+                @Html.TextBoxFor(x => x.Attribute.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Attribute.Name)
+            </div>
+        </div>
+        <div class="form-group" id="evalcontainer">
+            @foreach (var item in Model.Values)
+            {
+                <div class="attricontainer">
+                    <div class="col-sm-4">
+                        @Html.HiddenFor(x => x.Values[i].Id, new { @class="valId"})
+                        @Html.LabelFor(x => x.Values[i].Value, new { @class = "control-label" })
+                        @Html.TextBoxFor(x => x.Values[i].Value, new { @class = "form-control eattrval" })
+                        @Html.ValidationMessageFor(x => x.Values[i].Value, "", new { @class = "evalidValue" })
+                    </div>
+                    <div class="col-sm-2" style="padding-top:37px">
+                        <a href="javascript:;" class="btnEadd"><i class="fa fa-plus-circle"></i></a>
+                        <a href="javascript:;" class="btnErmv"><i class="fa fa-minus-circle"></i></a>
+                    </div>
+                </div>
+                i++;
+            }
+            
+        </div>
+    </div>
+    <div class="form-group text-right">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+}
+

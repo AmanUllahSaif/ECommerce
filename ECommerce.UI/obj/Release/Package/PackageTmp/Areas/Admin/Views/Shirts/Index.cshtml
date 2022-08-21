@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Ecommerce.DAL.CustomShirt>
+@{
+    ViewBag.Title = "Custom Shirts";
+    int i = 0;
+}
+@using Ecommerce.DAL.Enums
+@using PagedList
+@using PagedList.Mvc
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+
+        <h4>Cutom Shirts</h4>
+        <div class="pull-right">
+            <a href="@Url.Action("Create", "Shirts", new { area="admin"})" class="btn btn-success">Create New</a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Shirt Price</th>
+                        <th>Front Price</th>
+                        <th>Back Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @switch (item.Type)
+                                    {
+                                        case (int)ShirtType.ShortSleeveRound:
+                                            <label>Short Sleeve Round Neck</label>
+                                            break;
+                                        case (int)ShirtType.ShortSleeveV:
+                                            <label>Short Sleeve V Neck</label>
+                                            break;
+                                        case (int)ShirtType.LongSleeveV:
+                                            <label>Long Sleeve V Neck</label>
+                                            break;
+                                        case (int)ShirtType.LongSleeveRound:
+                                            <label>Long Sleeve Round Neck</label>
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                </td>
+                                <td>@item.ShirtPrice</td>
+                                <td>@item.FrontPrintPrice</td>
+                                <td>@item.BackPrintPrice</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", "Shirts", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    @Html.ActionLink("Delete", "Delete", "Shirts", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" class="text-danger text-center">
+                                No Record found.
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("index", new { page }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded })
+        </div>
+    </div>
+</div>
+

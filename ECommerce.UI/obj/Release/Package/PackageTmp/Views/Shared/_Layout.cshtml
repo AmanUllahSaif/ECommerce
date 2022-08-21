@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title  MMA Punch</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Styles.Render("~/site/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+</head>
+<body id="body">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+    <div class="header">
+        <div class="w3ls-header">
+            <!--header-one-->
+            <div class="w3ls-header-left">
+                @*<p><a href="#">UPTO $50 OFF ON LAPTOPS | USE COUPON CODE LAPPY </a></p>*@
+            </div>
+            <div class="w3ls-header-right">
+                <ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li class="dropdown head-dpdn">
+                                <a class="dropdown-toggle" href="@Url.Content("~/admin/Manage/index")">Admin Panel<i></i></a>
+                            </li>
+                        }
+                        <li class="dropdown head-dpdn">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> My Account<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Orders", "Shopping")">My Orders</a></li>
+                                <li><a href="" data-toggle="modal" data-target="#resetPassword">Change Password</a></li>
+                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                            </ul>
+                        </li>
+
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+                        }
+                    }
+                    else
+                    {
+                        <li class="dropdown head-dpdn">
+                            <a class="dropdown-toggle" href="@Url.Content("~/Account/login")">Login<i></i></a>
+                        </li>
+                        <li class="dropdown head-dpdn"> <a class="dropdown-toggle" href="@Url.Content("~/Account/register")">Register<i></i></a> </li>
+                    }
+
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        @Html.Action("NavBar", "Home")
+    </div>
+    <div class="body-content">
+        <div class="header-three">
+            <div class="container">
+                <div class="move-text">
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-info w3-agileits-info">
+                <div class="col-md-4 agileinfo">
+                    <div class="footer-logo header-logo">
+                        <a href="@Url.Content("~/")"><img src="@Url.Content("~/")Theme/images/logo.png" style="width: 215px;height: 80px;margin-top: -30px;" /></a>
+                    </div>
+                    <div class="col-md-12 social-icons w3-agile-icons">
+                        <ul>
+                            <li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
+                            <li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+                            <li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
+                            <li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
+                            <li><a href="#" class="fa fa-rss icon rss"> </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8 address-right">
+                    <div class="col-md-4 footer-grids">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="@Url.Content("~/")home/about">About Us</a></li>
+                            <li><a href="@Url.Content("~/")Home/contact">Contact Us</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-md-4 footer-grids">
+                        <h3>Policies</h3>
+                        <ul>
+                            <li><a href="@Url.Content("~/")home/privacy">Privacy Policy</a></li>
+                            <li><a href="@Url.Content("~/")home/refund">Return & Refund Policy</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-md-4 footer-grids">
+                        <h3>Payment Methods</h3>
+                        <ul>
+                            <li><i class="fa fa-laptop" aria-hidden="true"></i> Net Banking</li>
+                            <li><i class="fa fa-money" aria-hidden="true"></i> Cash On Delivery</li>
+                            <li><i class="fa fa-pie-chart" aria-hidden="true"></i>EMI Conversion</li>
+                            <li><i class="fa fa-gift" aria-hidden="true"></i> E-Gift Voucher</li>
+                            <li><i class="fa fa-credit-card" aria-hidden="true"></i> Debit/Credit Card</li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div id="setPass">
+                
+                @Html.Action("ChangePassword", "Manage")
+            </div>
+        }
+    </footer>
+    <!-- //footer -->
+    <div class="copy-right">
+        <div class="container">
+            <p>© @DateTime.UtcNow.Year MMA Punch. Powered By <a href="http://www.vnextsolution.com" target="_blank"> VNext Solution.</a></p>
+        </div>
+    </div>
+    <!-- cart-js -->
+    <div class="lds-css ng-scope">
+        <div style="width:100%;height:100%" class="lds-cube">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <style type="text/css">
+            .lds-css{
+                height:100%;
+                width:100%;
+                z-index:1000;
+                position:absolute;
+                top:0;
+                left:0;
+                background-color:azure;
+                opacity:0.7;
+                display:none;
+            }
+            .lds-css > .lds-cube{
+                position:relative;
+                top:50%;
+                left:50%;
+            }
+            @@keyframes lds-cube {
+                0% {
+                    -webkit-transform: scale(1.5);
+                    transform: scale(1.5);
+                }
+
+                100% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+
+            @@-webkit-keyframes lds-cube {
+                0% {
+                    -webkit-transform: scale(1.5);
+                    transform: scale(1.5);
+                }
+
+                100% {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+
+            .lds-cube {
+                position: relative;
+            }
+
+                .lds-cube div {
+                    position: absolute;
+                    width: 80px;
+                    height: 80px;
+                    top: 10px;
+                    left: 10px;
+                    background: #cc242e;
+                    -webkit-animation: lds-cube 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+                    animation: lds-cube 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+                    -webkit-animation-delay: -0.3s;
+                    animation-delay: -0.3s;
+                }
+
+                    .lds-cube div:nth-child(2) {
+                        top: 10px;
+                        left: 110px;
+                        background: #08bce4;
+                        -webkit-animation-delay: -0.2s;
+                        animation-delay: -0.2s;
+                    }
+
+                    .lds-cube div:nth-child(3) {
+                        top: 110px;
+                        left: 110px;
+                        background: #cf00ff;
+                        -webkit-animation-delay: 0s;
+                        animation-delay: 0s;
+                    }
+
+                    .lds-cube div:nth-child(4) {
+                        top: 110px;
+                        left: 10px;
+                        background: #3aca31;
+                        -webkit-animation-delay: -0.1s;
+                        animation-delay: -0.1s;
+                    }
+
+            .lds-cube {
+                width: 200px !important;
+                height: 200px !important;
+                -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+                transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+            }
+        </style>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/site/js")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/")Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        // Dock the header to the top of the window when scrolled past the banner. This is the default behaviour.
+
+        $('.header-two').scrollToFixed();
+        // previous summary up the page.
+
+        var summaries = $('.summary');
+        summaries.each(function (i) {
+            var summary = $(summaries[i]);
+            var next = summaries[i + 1];
+
+            summary.scrollToFixed({
+                marginTop: $('.header-two').outerHeight(true) + 10,
+                zIndex: 999
+            });
+        });
+        $('.marquee').marquee({ pauseOnHover: true });
+        $(document).on('click', '.delcustom', function () {
+            var delbtn = $(this);
+            var data = $(this).data('id');
+            if (data) {
+                $.ajax({
+                    url: '/cart/removecustom/' + (data - 1),
+                    success: function (e) {
+                        $('#crt').html(e);
+                    }
+                })
+            }
+        })
+        $(document).on('click', '.del', function () {
+            var delbtn = $(this);
+            var data = $(this).data('id');
+            if (data) {
+                $.ajax({
+                    url: '/cart/remove/' + data,
+                    success: function (e) {
+                        $('#crt').html(e);
+                    }
+                })
+            }
+        })
+
+        function ShowModal() {
+            $('.modal-backdrop').remove();
+            $('body').attr('style', '');
+            $('#resetPassword').modal();
+        }
+        $(document).ajaxStart(function () {
+            $('#body').attr('style', 'overflow:hidden;')
+            $('.lds-css').show();
+        })
+
+        $(document).ajaxComplete(function () {
+            $('#body').attr('style', 'overflow:auto;')
+            $('.lds-css').hide();
+        })
+    </script>
+</body>
+</html>

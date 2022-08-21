@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9264573b0d3f436b868539014526424e" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="EcommerceDBModel.Attribute" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="EcommerceDBModel.AttributeValue" Width="1.5" PointX="2.25" PointY="0.5" />
+        <AssociationConnector Association="EcommerceDBModel.FK_AttributeValue_Attribute" />
+        <EntityTypeShape EntityType="EcommerceDBModel.ProductImage" Width="1.5" PointX="2.125" PointY="4.375" />
+        <EntityTypeShape EntityType="EcommerceDBModel.AttribCombinationDetail" Width="1.5" PointX="4" PointY="4.25" />
+        <EntityTypeShape EntityType="EcommerceDBModel.AttributeCombination" Width="1.5" PointX="3.25" PointY="9.375" />
+        <AssociationConnector Association="EcommerceDBModel.FK_AttribCombinationDetail_Attribute" />
+        <AssociationConnector Association="EcommerceDBModel.FK_AttribCombinationDetail_AttributeCombination" />
+        <AssociationConnector Association="EcommerceDBModel.FK_AttribCombinationDetail_AttributeValue" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Stock" Width="1.5" PointX="4.875" PointY="9.25" />
+        <AssociationConnector Association="EcommerceDBModel.FK_Stock_AttributeCombination" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Banner" Width="1.5" PointX="4" PointY="0.5" />
+        <EntityTypeShape EntityType="EcommerceDBModel.OrderDetail" Width="1.5" PointX="7" PointY="9.25" />
+        <AssociationConnector Association="EcommerceDBModel.FK_OrderDetail_Stock" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Vendor" Width="1.5" PointX="5.75" PointY="4.375" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Purchase" Width="1.5" PointX="11.125" PointY="4.25" />
+        <EntityTypeShape EntityType="EcommerceDBModel.PurchaseDetail" Width="1.5" PointX="12.875" PointY="4" />
+        <AssociationConnector Association="EcommerceDBModel.FK_Purchase_Vendor" />
+        <AssociationConnector Association="EcommerceDBModel.FK_PurchaseDetail_Purchase" />
+        <AssociationConnector Association="EcommerceDBModel.FK_PurchaseDetail_Stock" />
+        <EntityTypeShape EntityType="EcommerceDBModel.B2BDetail" Width="1.5" PointX="9.5" PointY="19.625" />
+        <AssociationConnector Association="EcommerceDBModel.FK_B2BDetail_Stock" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Order" Width="1.5" PointX="4.5" PointY="13.375" />
+        <AssociationConnector Association="EcommerceDBModel.FK_B2BDetail_Order" />
+        <AssociationConnector Association="EcommerceDBModel.FK_OrderDetail_Order" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Product" Width="1.5" PointX="0.625" PointY="9.5" />
+        <AssociationConnector Association="EcommerceDBModel.FK_AttributeCombination_Product" />
+        <AssociationConnector Association="EcommerceDBModel.FK_OrderDetail_Product" />
+        <AssociationConnector Association="EcommerceDBModel.FK_ProductImages_Product" />
+        <AssociationConnector Association="EcommerceDBModel.FK_PurchaseDetail_Product" />
+        <AssociationConnector Association="EcommerceDBModel.FK_Stock_Product" />
+        <EntityTypeShape EntityType="EcommerceDBModel.CustomShirt" Width="1.5" PointX="8.875" PointY="9.5" />
+        <EntityTypeShape EntityType="EcommerceDBModel.CustomShirtsOrder" Width="1.5" PointX="5.125" PointY="21.125" />
+        <AssociationConnector Association="EcommerceDBModel.FK_CustomShirtsOrder_Order" />
+        <EntityTypeShape EntityType="EcommerceDBModel.SaleBanner" Width="1.5" PointX="5.75" PointY="0.5" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Category" Width="1.5" PointX="0.5" PointY="4.375" />
+        <AssociationConnector Association="EcommerceDBModel.FK_Attritube_Category" />
+        <AssociationConnector Association="EcommerceDBModel.FK_Category_Category" />
+        <AssociationConnector Association="EcommerceDBModel.FK_Product_Category" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Package" Width="1.5" PointX="2.375" PointY="12.875" />
+        <AssociationConnector Association="EcommerceDBModel.FK_B2BDetail_Package" />
+        <AssociationConnector Association="EcommerceDBModel.FK_Package_Product" />
+        <EntityTypeShape EntityType="EcommerceDBModel.C__MigrationHistory" Width="1.5" PointX="7.375" PointY="0.5" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Account" Width="1.5" PointX="9.25" PointY="0.5" />
+        <EntityTypeShape EntityType="EcommerceDBModel.AccountDetail" Width="1.5" PointX="12" PointY="0.875" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Role" Width="1.5" PointX="10.75" PointY="10.25" />
+        <EntityTypeShape EntityType="EcommerceDBModel.Transaction" Width="1.5" PointX="8.125" PointY="13.75" />
+        <EntityTypeShape EntityType="EcommerceDBModel.UserClaim" Width="1.5" PointX="14.75" PointY="10.75" />
+        <EntityTypeShape EntityType="EcommerceDBModel.UserLogin" Width="1.5" PointX="10.625" PointY="12.625" />
+        <EntityTypeShape EntityType="EcommerceDBModel.User" Width="1.5" PointX="12.75" PointY="9.875" />
+        <AssociationConnector Association="EcommerceDBModel.FK_Account_Account" />
+        <AssociationConnector Association="EcommerceDBModel.FK_AccountDetail_Account" />
+        <AssociationConnector Association="EcommerceDBModel.FK_AccountDetail_Transaction" />
+        <AssociationConnector Association="EcommerceDBModel.FK_dbo_UserClaims_dbo_Users_UserId" />
+        <AssociationConnector Association="EcommerceDBModel.FK_dbo_UserLogins_dbo_Users_UserId" />
+        <AssociationConnector Association="EcommerceDBModel.UserRoles" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

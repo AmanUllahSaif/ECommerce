@@ -1,0 +1,66 @@
+E:\VnextProjects\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.dll.config
+E:\VnextProjects\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.dll
+E:\VnextProjects\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.pdb
+E:\VnextProjects\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.dll
+E:\VnextProjects\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.dll
+E:\VnextProjects\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.SqlServer.dll
+E:\VnextProjects\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.pdb
+E:\VnextProjects\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.xml
+E:\VnextProjects\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.SqlServer.xml
+E:\VnextProjects\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.BLL.csprojResolveAssemblyReference.cache
+E:\VnextProjects\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.Repo.dll
+E:\VnextProjects\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.Repo.pdb
+H:\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.dll.config
+H:\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.dll
+H:\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.pdb
+H:\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.dll
+H:\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.dll
+H:\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.SqlServer.dll
+H:\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.pdb
+H:\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.xml
+H:\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.SqlServer.xml
+H:\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.BLL.csprojResolveAssemblyReference.cache
+H:\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.Repo.dll
+H:\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.Repo.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.dll.config
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.SqlServer.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.SqlServer.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.BLL.csprojResolveAssemblyReference.cache
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.Repo.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.Repo.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.dll.config
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.SqlServer.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.SqlServer.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.Repo.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.Repo.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.dll.config
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.BLL.csprojAssemblyReference.cache
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.BLL.csproj.CoreCompileInputs.cache
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.BLL.csproj.CopyComplete
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.dll.config
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.Repo.pdb
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.SqlServer.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.pdb
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\Ecommerce.DAL.dll.config
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\bin\Debug\EntityFramework.SqlServer.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.BLL.csprojAssemblyReference.cache
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.BLL.csproj.CoreCompileInputs.cache
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.BLL.csproj.CopyComplete
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.Repo.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.Repo\obj\Debug\Ecommerce.Repo.pdb

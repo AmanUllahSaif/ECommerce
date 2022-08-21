@@ -1,0 +1,54 @@
+E:\VnextProjects\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.dll.config
+E:\VnextProjects\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.dll
+E:\VnextProjects\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.pdb
+E:\VnextProjects\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.dll
+E:\VnextProjects\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.SqlServer.dll
+E:\VnextProjects\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.xml
+E:\VnextProjects\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.SqlServer.xml
+E:\VnextProjects\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.dll
+E:\VnextProjects\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.pdb
+E:\VnextProjects\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.csprojResolveAssemblyReference.cache
+H:\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.dll.config
+H:\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.dll
+H:\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.pdb
+H:\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.dll
+H:\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.SqlServer.dll
+H:\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.xml
+H:\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.SqlServer.xml
+H:\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.dll
+H:\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.pdb
+H:\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.csprojResolveAssemblyReference.cache
+F:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.dll.config
+F:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.SqlServer.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.SqlServer.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.csprojResolveAssemblyReference.cache
+F:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.dll.config
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.SqlServer.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.SqlServer.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.csprojAssemblyReference.cache
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.csproj.CoreCompileInputs.cache
+E:\Vnext\Ecomm\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.csproj.CopyComplete
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.dll.config
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\bin\Debug\VNS.Accounts.pdb
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.SqlServer.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\bin\Debug\EntityFramework.SqlServer.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.csprojAssemblyReference.cache
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.csproj.CoreCompileInputs.cache
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.csproj.CopyComplete
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\VNS.Accounts\obj\Debug\VNS.Accounts.pdb

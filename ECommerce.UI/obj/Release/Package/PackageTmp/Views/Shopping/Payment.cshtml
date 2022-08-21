@@ -1,0 +1,73 @@
+﻿@model ECommerce.UI.Models.CreditCardViewModel
+@{
+    ViewBag.Title = "Payment";
+}
+@using Ecommerce.DAL.Enums
+@using (Html.BeginForm("Payment", "Shopping", FormMethod.Post))
+{
+    <div class="container" style="min-height:400px;position:relative">
+        <a href="@Url.Action("checkout", "shopping")" class="btn btn-primary" style="position:absolute;bottom:5px;left:0;border-radius:0;">Back to Cart</a>
+        <button type="submit" class="btn btn-primary" style="position:absolute;bottom:5px;right:0;border-radius:0;">Check Out</button>
+        <div class="col-sm-4 shoppingsetps">
+            <div class="col-sm-12 step active">
+                <span> 1 </span>
+                Check out
+            </div>
+            <div class="col-sm-12 step active">
+                <span> 2 </span>
+                Shipping Info
+            </div>
+            <div class="col-sm-12 step active">
+                <span> 3 </span>
+                Payment
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-12">
+                    @Html.LabelFor(x => x.CardName, new { @class = "control-label" })
+                    @Html.DropDownListFor(x => x.CardName, EnumHelper.GetSelectList(typeof(CardType)), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.CardName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => x.ExpireMonth, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.ExpireMonth, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ExpireMonth)
+                </div>
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => x.ExpireYear, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.ExpireYear, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ExpireYear)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => x.CVV, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.CVV, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.CVV)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    @Html.LabelFor(x => x.Number, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.Number, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Number)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => x.FirstName, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.FirstName)
+                </div>
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => x.LastName, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.LastName)
+                </div>
+            </div>
+        </div>
+    </div>
+}

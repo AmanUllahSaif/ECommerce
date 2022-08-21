@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Ecommerce.DAL.Order>
+@{
+    ViewBag.Title = "Orders";
+}
+
+@using Ecommerce.DAL.Enums
+@using PagedList
+@using PagedList.Mvc
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Order Num</th>
+                    <th>Name</th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Amount
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            @if (Model != null && Model.Count() > 0)
+            {
+                <tbody>
+                    @foreach (var item in Model)
+                {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>
+                                @item.CreatedOn.ToString("dd/MM/yyyy")
+                            </td>
+                            <td>
+                                @((OrderType)item.Type)
+                            </td>
+                            
+                            <td>
+                                @((OrderStatus)item.Status)
+                            </td>
+                            <td>
+                                @switch (item.Type)
+                                {
+                                    case (int)OrderType.B2B:
+                                        @: @item.B2BDetail.Sum(x => x.Price * x.PackageQuantity)
+                            break;
+                                    case (int)OrderType.Genral:
+                                        @: @item.OrderDetails.Where(x => x.IsActive).Sum(x => x.Quantity * x.Price)
+                            break;
+                                    default:
+                                        break;
+                                }
+                            </td>
+                            <td>
+                                @switch (item.Status)
+                                {
+                                    case (int)OrderStatus.New:
+                                        @Html.ActionLink("Cancel", "Cancel", "Shopping", new { id = item.Id, status =(int)OrderStatus.Cancel}, new { @class = "btn btn-danger" })
+                                        break;
+                                    @*case (int)OrderStatus.Inprocess:
+                                        @Html.ActionLink("Request return", "", "", new { @class = "btn btn-primary" })
+                                        break;*@
+                                    case (int)OrderStatus.Shipped:
+                                        @Html.ActionLink("Request return", "Cancel", "Shopping", new { id = item.Id, status = (int)OrderStatus.ReturnRequest }, new { @class = "btn btn-primary" })
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="7" class="text-right">
+                            @Html.PagedListPager((IPagedList)Model, Page => Url.Action("Oders", new { Page }),new PagedListRenderOptions() {Display=PagedListDisplayMode.IfNeeded})
+                        </td>
+                    </tr>
+                </tfoot>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center text-info">No Record Found.</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

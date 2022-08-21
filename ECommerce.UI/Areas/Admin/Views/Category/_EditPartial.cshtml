@@ -1,0 +1,57 @@
+﻿@model Ecommerce.DAL.Category
+@{
+    ViewBag.Title = "Edit";
+}
+@using Ecommerce.DAL.Enums
+
+@using (Html.BeginForm("Edit", "Category"))
+{
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4>Edit Navigation</h4>
+        </div>
+        <div class="panel-body">
+
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.HiddenFor(x => x.ParentId, new { id = "hdnparentId" })
+                <div class="col-sm-3">
+                    @Html.LabelFor(x => x.Type, new { @class = "control-label" })
+                    @Html.DropDownListFor(x => x.Type, EnumHelper.GetSelectList(typeof(CategoryType)), "Select Category Type", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Type)
+                </div>
+                <div class="col-sm-3 navparent" id="navHead" style="display:none">
+                    @Html.Label("Heading", new { @class = "control-label", @for = "Head" })
+                    @Html.DropDownListFor(x => x.ParentId, new SelectList(ViewBag.NavigationHeading,"Id", "Name"), "Select Navigation Heading", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ParentId)
+                </div>
+                <div class="col-sm-3 navparent" id="navcate" style="display:none">
+                    @Html.Label("Category", new { @class = "control-label", @for = "Category" })
+                    @Html.DropDownListFor(x => x.ParentId, new SelectList(ViewBag.NavigationCategory,"Id", "Name"), "Select Navigation Category", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.ParentId)
+                </div>
+                <div class="col-sm-3">
+                    @Html.HiddenFor(x => x.Id)
+                    @Html.LabelFor(x => x.Name, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Name)
+                </div>
+                <div class="col-sm-3" style="margin-top:40px;">
+                    @Html.LabelFor(x => x.IsAdultAlert)
+                    @Html.CheckBoxFor(x => x.IsAdultAlert)
+                </div>
+
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <div class="btn-toolbar">
+                        <button class="btn-primary btn" type="submit">Submit</button>
+                        <a href="@Url.Action("Index","Category")" class="btn-default btn" >Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

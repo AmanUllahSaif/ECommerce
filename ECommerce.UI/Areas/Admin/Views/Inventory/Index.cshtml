@@ -1,0 +1,162 @@
+﻿@model IEnumerable<Ecommerce.DAL.Product>
+@{
+    ViewBag.Title = "Stock Management";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4>Manage Stock</h4>
+    </div>
+    <div class="panel-body">
+
+        @if (Model != null && Model.Count() > 0)
+        {
+            <div class="panel-group panel-success" id="accordion">
+                @foreach (var item in Model)
+                {
+                    <div class="panel panel-default">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#@item.Id">
+                            <div class="panel-heading">
+                                <h4>@item.Name</h4>
+                                <div class="pull-right">
+                                    <span style="color:#fff">( @item.Stocks.Where(x => x.IsActive).Sum(x => x.Quantity) )</span>
+                                    @Ajax.ActionLink(" ", "Add", "Inventory", new { Id = item.CategoryId, ProdId = item.Id }, new AjaxOptions { UpdateTargetId = "rld", OnSuccess = "ShowModal()" }, new { @class = "fa fa-plus-square" })
+                                </div>
+                            </div>
+                        </a>
+                        <div id="@item.Id" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                @if (item.Stocks.Where(x => x.IsActive == true).Sum(x => x.Quantity) > 0)
+                                {
+                                    item.Stocks = item.Stocks.Where(x => x.IsActive == true).ToList();
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    @foreach (var atributes in item.Category.Attributes)
+                                                    {
+                                                        if (atributes.Name == "Color")
+                                                        {
+                                                            /**/
+                                                        }
+                                                        else
+                                                        {
+                                                            <th>@atributes.Name</th>
+                                                        }
+                                                    }
+                                                    <th>Quantity</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                @foreach (var stck in item.Stocks)
+                                                {
+                                                    <tr>
+                                                        @foreach (var det in stck.AttributeCombination.AttribCombinationDetails)
+                                                        {
+                                                            <td>@det.AttributeValue.Value</td>
+                                                        }
+                                                        <td>@stck.Quantity</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="text-danger"> No Record found.</div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+        }
+        else
+        {
+            <div class="col-md-12 text-danger text-center">
+                No record found
+            </div>
+        }
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        @using (Html.BeginForm("Add", "Inventory", FormMethod.Post))
+        {
+              <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Stock</h4>
+                </div>
+                <div class="modal-body" id="rld">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-default">Save</button>
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        function ShowModal() {
+            $('#myModal').modal('show');
+        }
+        // ------------- Stock Add and Remove ------------
+        var stockCount = 0;
+        $(document).on('click', '.btnRwAdd', function () {
+            var cloneRow = $(this).closest('tr').clone();
+            $(this).closest('tbody').append(cloneRow);
+            stockCount++;
+            renameStock();
+        })
+
+        $(document).on('click', '.btnRwRmv', function () {
+            if (stockCount > 0) {
+                $(this).closest('tr').remove();
+                stockCount--;
+                renameStock()
+            }
+        })
+
+        function renameStock() {
+            var trs = $('#rowContainer').find('tr');
+            for (var i = 0; i < trs.length; i++) {
+                var tr = $(trs[i]);
+                debugger;
+                var qty = tr.find('.qty');
+                var Name = 'Stocks[' + i + ']';
+                var replaceName;
+                if (i > 0) {
+                    replaceName = 'Stocks[' + (i - 1) + ']';
+                } else {
+                    replaceName = 'Stocks[' + i + ']';
+                }
+                var oldAttrib = tr.find('.attribId');
+                var oldValue = tr.find('.attribVal');
+                var valid = tr.find('.attribVld');
+                for (var j = 0; j < oldAttrib.length; j++) {
+
+                    $(oldValue[j]).attr('name', $(oldValue[j]).attr('name').replace(replaceName, Name));
+                    $(valid[j]).attr('data-valmsg-for', $(valid[j]).attr('data-valmsg-for').replace(replaceName, Name))
+                    $(oldAttrib[j]).attr('name', newName);
+                }
+                $(qty).attr('name', $(qty).attr('name').replace(replaceName, Name));
+
+            }
+        }
+    </script>
+}

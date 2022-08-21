@@ -1,0 +1,27 @@
+﻿@model Ecommerce.DAL.Package
+
+
+<div class="row">
+    <div class="col-sm-6">
+        @Html.HiddenFor(x => x.Id)
+        @Html.LabelFor(x => x.ProductId, new { @class = "control-label" })
+        @Html.DropDownListFor(x => x.ProductId, new SelectList(ViewBag.products, "Id", "Name"), "Select Product", new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProductId)
+    </div>
+    <div class="col-sm-6">
+        @Html.LabelFor(x => x.StartQuantity, new { @class = "control-label" })
+        @Html.TextBoxFor(x => x.StartQuantity, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.StartQuantity)
+    </div>
+    <div class="col-sm-6">
+        @Html.LabelFor(x => x.EndQuantity, new { @class = "control-label" })
+        @Html.TextBoxFor(x => x.EndQuantity, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.EndQuantity)
+    </div>
+    <div class="col-sm-6">
+        @Html.LabelFor(x => x.Price, new { @class = "control-label" })
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Price)
+    </div>
+</div>
+

@@ -1,0 +1,71 @@
+﻿@model Ecommerce.DAL.SaleBanner
+
+<style>
+    .fileinput-preview img {
+        width: 100%;
+    }
+</style>
+@using (Html.BeginForm("Update", "DiscountBanner", FormMethod.Post, new { @class = "", @enctype = "multipart/form-data" }))
+{
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4>Create Discount Banner</h4>
+        </div>
+        <div class="panel-body">
+            <div class="col-sm-12">
+                <div class="col-sm-3">
+                    @Html.HiddenFor(x => x.Id)
+                    @Html.LabelFor(x => x.Text, new { @class = "control-label", @for = "Text" })
+                    @Html.TextBoxFor(x => x.Text, new { @class = "form-control" })
+                </div>
+                <div class="col-sm-3">
+                    @Html.LabelFor(x => x.PageUrl, new { @class = "control-label", @for = "PageUrl" })
+                    @Html.TextBoxFor(x => x.PageUrl, new { @class = "form-control" })
+                </div>
+                <div class="col-sm-3">
+                    @Html.LabelFor(x => x.TextColor, new { @class = "control-label" })
+                    @Html.TextBoxFor(x => x.TextColor, new { @class = "form-control jsColor" })
+                    @Html.ValidationMessageFor(x => x.TextColor)
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="col-sm-6" style="margin-top:10px;">
+                    <div class="fileinput fileinput-new" data-provides="fileinput" style="width: 100%; height: 150px;">
+                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 100%; height: 150px;">
+                            @if (Model.ImageUrl != null)
+                            {
+                                <img src="@Url.Content(Model.ImageUrl)" />
+                            }
+                            else
+                            {
+                                <img src="~/uploadimages/noimage.jpg" />
+                            }
+
+                        </div>
+                        <div>
+                            <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" class="file" name="DiscountBannerImage"></span>
+                            <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12" id="tbl">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer text-right">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                    <input type="reset" value="Cancel" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+}

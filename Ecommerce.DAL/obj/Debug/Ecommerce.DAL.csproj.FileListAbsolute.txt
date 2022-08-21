@@ -1,0 +1,63 @@
+E:\VnextProjects\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.dll.config
+E:\VnextProjects\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.dll
+E:\VnextProjects\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.pdb
+E:\VnextProjects\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.dll
+E:\VnextProjects\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\VnextProjects\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.xml
+E:\VnextProjects\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\VnextProjects\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.Resources.ValidationResources.resources
+E:\VnextProjects\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csproj.GenerateResource.Cache
+E:\VnextProjects\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.dll
+E:\VnextProjects\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.pdb
+E:\VnextProjects\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csprojResolveAssemblyReference.cache
+H:\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.dll.config
+H:\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.dll
+H:\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.pdb
+H:\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.dll
+H:\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.SqlServer.dll
+H:\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.xml
+H:\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.SqlServer.xml
+H:\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.Resources.ValidationResources.resources
+H:\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csproj.GenerateResource.Cache
+H:\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.dll
+H:\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.dll.config
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.SqlServer.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.SqlServer.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csprojResolveAssemblyReference.cache
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.Resources.ValidationResources.resources
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csproj.GenerateResource.Cache
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.dll.config
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.Resources.ValidationResources.resources
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csproj.GenerateResource.Cache
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csprojAssemblyReference.cache
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csproj.CoreCompileInputs.cache
+E:\Vnext\Ecomm\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csproj.CopyComplete
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.dll.config
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\Ecommerce.DAL.pdb
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csprojAssemblyReference.cache
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.Resources.ValidationResources.resources
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csproj.GenerateResource.cache
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csproj.CoreCompileInputs.cache
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.csproj.CopyComplete
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\Ecommerce.DAL\obj\Debug\Ecommerce.DAL.pdb

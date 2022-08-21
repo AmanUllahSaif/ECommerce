@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Ecommerce.DAL.Banner>
+@using Ecommerce.DAL.Enums
+
+<div class="banner">
+    <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
+        <!-- Wrapper-for-Slides -->
+        <div class="carousel-inner" role="listbox">
+            @if (Model != null && Model.Count() > 0)
+            {
+                int i = 0;
+                foreach (var item in Model)
+                {
+                    if (i == 0)
+                    {
+                        <div class="item active">
+                            <!-- First-Slide -->
+                            <img src="@Url.Content(item.ImgUrl)" alt="" class="img-responsive" />
+                            <div class="carousel-caption kb_caption kb_caption_right">
+                                <h3 data-animation="animated @((SliderAnimation)item.AnimationType)">@item.Heading</h3>
+                                <h4 data-animation="animated @((SliderAnimation)item.AnimationType)">@item.Description</h4>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="item">
+                            <!-- First-Slide -->
+                            <img src="@Url.Content(item.ImgUrl)" alt="" class="img-responsive" />
+                            <div class="carousel-caption kb_caption kb_caption_right">
+                                <h3 data-animation="animated @((SliderAnimation)item.AnimationType)">@item.Heading</h3>
+                                <h4 data-animation="animated @((SliderAnimation)item.AnimationType)">@item.Description</h4>
+                            </div>
+                        </div>
+                    }
+                    i++;
+
+                }
+            }
+        </div>
+        <!-- Left-Button -->
+        <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
+            <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <!-- Right-Button -->
+        <a class="right carousel-control kb_control_right" href="#kb" role="button" data-slide="next">
+            <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>

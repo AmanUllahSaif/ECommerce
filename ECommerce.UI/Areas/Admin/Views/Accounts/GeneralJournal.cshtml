@@ -1,0 +1,162 @@
+﻿@model IEnumerable<VNS.Accounts.DAL.Transaction>
+@{
+    ViewBag.Title = "General Journal";
+    int i = 1;
+}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        @using (Html.BeginForm("GeneralJournal", "Accounts", FormMethod.Get))
+        {
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        @Html.Label("From", new { @class = "control-label", @for = "from" })
+                        @Html.TextBox("from", "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-3">
+                        @Html.Label("To", new { @class = "control-label", @for = "to" })
+                        @Html.TextBox("to", "", new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group text-right col-sm-6">
+                    <button type="submit" class="btn btn-default">Search</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="printPanel">
+    <div class="panel panel-default ">
+        <!-- <div class="panel-heading">
+            <h4>Invoice</h4>
+        </div> -->
+        <div class="panel-body">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <h4>
+                        General Journal
+                    </h4>
+                </div>
+                <div class="pull-right">
+                    <h4 class="text-right"><img src="@Url.Content("~/theme/images/urz2.png")" alt="Avant" style="height:75px"></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pull-right">
+                        <ul class="text-right list-unstyled">
+                            <li><strong>Date:</strong> @DateTime.Now.ToString("dd-MMMM-yyyy")</li>
+                            @*<li><strong>Due:</strong> @Model.CreatedOn.AddDays(3).ToString("dd-MMMM-yyyy")</li>*@
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Dr</th>
+                                    <th>Cr</th>
+                                </tr>
+                            </thead>
+                            @if (Model != null && Model.Count() > 0)
+                            {
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@i</td>
+                                            <td>@item.Date.ToString("dd-MM-yyyy")</td>
+                                            <td>
+                                                <div style="margin:0 auto;width:60%">
+                                                    @foreach (var Account in item.AccountDetails)
+                                                    {
+                                                        if (Account.Cr == null)
+                                                        {
+                                                            <span class="pull-left">@Account.Account.Name</span> <br />
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="pull-right">@Account.Account.Name</span> <br />
+                                                        }
+                                                    }
+                                                </div>
+                                                @item.Narration
+                                            </td>
+                                            <td>
+                                                @foreach (var Account in item.AccountDetails)
+                                                {
+                                                    if (Account.Dr == null)
+                                                    {
+                                                        <br />
+                                                    }
+                                                    @Account.Dr
+                                                }
+                                            </td>
+                                            <td>
+                                                @foreach (var Account in item.AccountDetails)
+                                                {
+                                                    if (Account.Cr == null)
+                                                    {
+                                                        <br />
+                                                    }
+                                                    @Account.Cr
+                                                }
+                                            </td>
+                                        </tr>
+                                        i++;
+                                    }
+                                </tbody>
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="5" class="text-danger text-center">No Record Found.</td>
+                                </tr>
+                            }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-footer hidden-print">
+                <div class="pull-right">
+                    <a href="javascript:;" class="btn btn-inverse btnPrint"><i class="fa fa-print"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script type="text/javascript">
+        $('.btnPrint').click(function () {
+            var styleSheets = $('link');
+            var pWin = window.open('', 'Invoice Print', 'height=600,width=800');
+            pWin.document.write('<html><head><title>Purchase</title>');
+            for (var i = 0; i < styleSheets.length; i++) {
+                var linkTag = "<link rel='stylesheet' type='text/css' href='" + $(styleSheets[i]).attr('href') + "' />";
+                pWin.document.write(linkTag);
+            }
+            pWin.document.write('</head><body >');
+            pWin.document.write($('.printPanel').html());
+            pWin.document.write('</body></html>');
+            setTimeout(function () {
+                pWin.print();
+            }, 1000)
+            $(pWin.document).ready(function () {
+                //pWin.print();
+            });
+        })
+    </script>
+}

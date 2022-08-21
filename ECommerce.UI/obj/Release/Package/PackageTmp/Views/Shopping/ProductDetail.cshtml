@@ -1,0 +1,297 @@
+﻿@model ECommerce.UI.Models.ProductDetailViewModel
+@{
+    ViewBag.Title = "Product Detail";
+    int i = 0;
+    decimal price = 0;
+    if (Model.Item.Sale)
+    {
+        price = Model.Item.Price - (Model.Item.Price * (Model.Item.Discount.Value / 100));
+    }
+    else
+    {
+        price = Model.Item.Price;
+    }
+   Model.Item.Packages = Model.Item.Packages.Where(x => x.IsActive).ToList();
+}
+<link rel="stylesheet" href="@Url.Content("~/theme/")css/flexslider.css" type="text/css" media="screen" />
+
+<div class="products">
+    <div class="container">
+        <div class="single-page">
+            <div class="single-page-row" id="detail-21">
+                <div class="col-md-6 single-top-left">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            @foreach (var item in Model.Item.ProductImages)
+                            {
+                                <li data-thumb="@Url.Content(item.Url)">
+                                    <div class="thumb-image detail_images"> <img src="@Url.Content(item.Url)" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 single-top-right">
+                    @if (Request.QueryString["message"] != null)
+                    {
+                        <div class="col-md-12 alert alert-danger">
+                            @Request.QueryString["message"]
+                        </div>
+                    }
+                    <h3 class="item_name">@Model.Item.Name</h3>
+                    <p>Processing Time: Item will be shipped out within 2-3 working days. </p>
+                    <div class="single-rating">
+
+                    </div>
+                    <div class="single-price">
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Bussines"))
+                        {
+                            <ul>
+                                @foreach (var item in Model.Item.Packages)
+                                {
+                                    <li>@item.StartQuantity.ToString("0.##") to @item.EndQuantity.ToString("0.##") in $ @item.Price.ToString("0.##")</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul>
+                                <li>$ @price.ToString("0.##")</li>
+                                @if (Model.Item.Sale)
+                                {
+                                    <li><del>$@Model.Item.Price.ToString("0.##")</del></li>
+                                    <li><span class="w3off">@Model.Item.Discount.Value.ToString("0.##") % OFF</span></li>
+                                }
+                            </ul>
+                        }
+
+                    </div>
+                    <p class="single-price-text">@Model.Item.Description </p>
+                    @using (Html.BeginForm("Add", "Cart", FormMethod.Post))
+                    {
+                        <div class="row">
+                            @Html.HiddenFor(x => x.Item.Id)
+                            @foreach (var item in Model.Item.Category.Attributes)
+                            {
+                                if (item.IsActive)
+                                {
+                                    <div class="col-md-4">
+                                        @Html.HiddenFor(x => x.Veriations[i].AttributeId, new { Value = item.Id })
+                                        @Html.Label(item.Name, new { @class = "control-label" })
+                                        @Html.DropDownListFor(x => x.Veriations[i].ValueId, new SelectList(item.AttributeValues.Where(x => x.IsActive), "Id", "Value"), "Select Option", new { @class = "form-control attribVal" })
+                                        @Html.ValidationMessageFor(x => x.Veriations[i].ValueId)
+                                    </div>
+                                    i++;
+                                }
+                            }
+                            
+                            <div class="col-md-4">
+                                @Html.LabelFor(x => x.Quantity, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Quantity)
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:5px">
+
+                            <div class="col-md-12">
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                                <button class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            @*<div class="single-page-icons social-icons">
+                    <ul>
+                        <li><h4>Share on</h4></li>
+                        <li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
+                        <li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+                        <li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
+                        <li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
+                        <li><a href="#" class="fa fa-rss icon rss"> </a></li>
+                    </ul>
+                </div>*@
+        </div>
+        <!-- recommend<div class="recommend">
+            <h3 class="w3ls-title">Our Recommendations </h3>
+            <script>
+                $(document).ready(function () {
+                    $("#owl-demo5").owlCarousel({
+
+                        autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                        items: 4,
+                        itemsDesktop: [640, 5],
+                        itemsDesktopSmall: [414, 4],
+                        navigation: true
+
+                    });
+
+                });
+            </script>
+            <div id="owl-demo5" class="owl-carousel">
+                <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                        <div class="new-tag"><h6>20% <br> Off</h6></div>
+                        <a href="products1.html"><img src="images/f2.png" alt="img"></a>
+                        <div class="view-caption agileits-w3layouts">
+                            <h4><a href="products1.html">Women Sandal</a></h4>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <h5>$20</h5>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="Women Sandal" />
+                                <input type="hidden" name="amount" value="20.00" />
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                        <a href="products.html"><img src="images/e4.png" alt="img"></a>
+                        <div class="view-caption agileits-w3layouts">
+                            <h4><a href="products.html">Digital Camera</a></h4>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <h5>$80</h5>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="Digital Camera" />
+                                <input type="hidden" name="amount" value="100.00" />
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                        <div class="new-tag"><h6>New</h6></div>
+                        <a href="products4.html"><img src="images/s1.png" alt="img"></a>
+                        <div class="view-caption agileits-w3layouts">
+                            <h4><a href="products4.html">Roller Skates</a></h4>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <h5>$180</h5>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="Roller Skates" />
+                                <input type="hidden" name="amount" value="180.00" />
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                        <a href="products1.html"><img src="images/f1.png" alt="img"></a>
+                        <div class="view-caption agileits-w3layouts">
+                            <h4><a href="products1.html">T Shirt</a></h4>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <h5>$10</h5>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="T Shirt" />
+                                <input type="hidden" name="amount" value="10.00" />
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                        <div class="new-tag"><h6>New</h6></div>
+                        <a href="products6.html"><img src="images/p1.png" alt="img"></a>
+                        <div class="view-caption agileits-w3layouts">
+                            <h4><a href="products6.html">Coffee Mug</a></h4>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <h5>$14</h5>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="Coffee Mug" />
+                                <input type="hidden" name="amount" value="14.00" />
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                        <div class="new-tag"><h6>20% <br> Off</h6></div>
+                        <a href="products6.html"><img src="images/p2.png" alt="img"></a>
+                        <div class="view-caption agileits-w3layouts">
+                            <h4><a href="products6.html">Teddy bear</a></h4>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <h5>$20</h5>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="Teddy bear" />
+                                <input type="hidden" name="amount" value="20.00" />
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                        <a href="products4.html"><img src="images/s2.png" alt="img"></a>
+                        <div class="view-caption agileits-w3layouts">
+                            <h4><a href="products4.html">Football</a></h4>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <h5>$70</h5>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="Football" />
+                                <input type="hidden" name="amount" value="70.00" />
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="glry-w3agile-grids agileits">
+                        <div class="new-tag"><h6>Sale</h6></div>
+                        <a href="products3.html"><img src="images/h1.png" alt="img"></a>
+                        <div class="view-caption agileits-w3layouts">
+                            <h4><a href="products3.html">Wall Clock</a></h4>
+                            <p>Lorem ipsum dolor sit amet consectetur</p>
+                            <h5>$80</h5>
+                            <form action="#" method="post">
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="w3ls_item" value="Wall Clock" />
+                                <input type="hidden" name="amount" value="80.00" />
+                                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>ations -->
+        <!-- //recommendations -->
+        <!-- collapse-tabs -->
+        <!-- //collapse -->
+        <!-- offers-cards -->
+        <!-- //offers-cards -->
+    </div>
+</div>
+
+@section Scripts {
+    <script defer src="@Url.Content("~/Theme/")js/jquery.flexslider.js"></script>
+    <script src="@Url.Content("~/Theme/")js/imagezoom.js"></script>
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
+}

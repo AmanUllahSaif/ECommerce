@@ -1,0 +1,849 @@
+D:\E-Commerce\ECommerce.UI\bin\ApplicationInsights.config
+D:\E-Commerce\ECommerce.UI\bin\roslyn\csc.exe
+D:\E-Commerce\ECommerce.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\E-Commerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\E-Commerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\E-Commerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\E-Commerce\ECommerce.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\E-Commerce\ECommerce.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\E-Commerce\ECommerce.UI\bin\roslyn\System.Collections.Immutable.dll
+D:\E-Commerce\ECommerce.UI\bin\roslyn\System.Reflection.Metadata.dll
+D:\E-Commerce\ECommerce.UI\bin\roslyn\vbc.exe
+D:\E-Commerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe
+D:\E-Commerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe.config
+D:\E-Commerce\ECommerce.UI\bin\ECommerce.UI.dll.config
+D:\E-Commerce\ECommerce.UI\bin\ECommerce.UI.dll
+D:\E-Commerce\ECommerce.UI\bin\ECommerce.UI.pdb
+D:\E-Commerce\ECommerce.UI\bin\Antlr3.Runtime.dll
+D:\E-Commerce\ECommerce.UI\bin\Ecommerce.DAL.dll
+D:\E-Commerce\ECommerce.UI\bin\Ecommerce.Repo.dll
+D:\E-Commerce\ECommerce.UI\bin\EntityFramework.dll
+D:\E-Commerce\ECommerce.UI\bin\EntityFramework.SqlServer.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AI.Agent.Intercept.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AI.Web.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.dll
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Web.Infrastructure.dll
+D:\E-Commerce\ECommerce.UI\bin\Newtonsoft.Json.dll
+D:\E-Commerce\ECommerce.UI\bin\Owin.dll
+D:\E-Commerce\ECommerce.UI\bin\PagedList.dll
+D:\E-Commerce\ECommerce.UI\bin\PagedList.Mvc.dll
+D:\E-Commerce\ECommerce.UI\bin\System.Web.Helpers.dll
+D:\E-Commerce\ECommerce.UI\bin\System.Web.Mvc.dll
+D:\E-Commerce\ECommerce.UI\bin\System.Web.Optimization.dll
+D:\E-Commerce\ECommerce.UI\bin\System.Web.Razor.dll
+D:\E-Commerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.dll
+D:\E-Commerce\ECommerce.UI\bin\System.Web.WebPages.dll
+D:\E-Commerce\ECommerce.UI\bin\System.Web.WebPages.Razor.dll
+D:\E-Commerce\ECommerce.UI\bin\WebGrease.dll
+D:\E-Commerce\ECommerce.UI\bin\Ecommerce.DAL.pdb
+D:\E-Commerce\ECommerce.UI\bin\Ecommerce.Repo.pdb
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AI.Web.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\E-Commerce\ECommerce.UI\bin\PagedList.xml
+D:\E-Commerce\ECommerce.UI\bin\PagedList.Mvc.xml
+D:\E-Commerce\ECommerce.UI\bin\System.Web.Helpers.xml
+D:\E-Commerce\ECommerce.UI\bin\System.Web.Mvc.xml
+D:\E-Commerce\ECommerce.UI\bin\System.Web.Optimization.xml
+D:\E-Commerce\ECommerce.UI\bin\System.Web.Razor.xml
+D:\E-Commerce\ECommerce.UI\bin\System.Web.WebPages.xml
+D:\E-Commerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.xml
+D:\E-Commerce\ECommerce.UI\bin\System.Web.WebPages.Razor.xml
+D:\E-Commerce\ECommerce.UI\bin\Antlr3.Runtime.pdb
+D:\E-Commerce\ECommerce.UI\bin\Newtonsoft.Json.xml
+D:\E-Commerce\ECommerce.UI\bin\EntityFramework.xml
+D:\E-Commerce\ECommerce.UI\bin\EntityFramework.SqlServer.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.xml
+D:\E-Commerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\E-Commerce\ECommerce.UI\obj\Debug\ECommerce.UI.csprojResolveAssemblyReference.cache
+D:\E-Commerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.InitialCreate.resources
+D:\E-Commerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.UserId.resources
+D:\E-Commerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userimage.resources
+D:\E-Commerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userUnique_key.resources
+D:\E-Commerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userunique_key2.resources
+D:\E-Commerce\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.GenerateResource.Cache
+D:\E-Commerce\ECommerce.UI\obj\Debug\ECommerce.UI.dll
+D:\E-Commerce\ECommerce.UI\obj\Debug\ECommerce.UI.pdb
+F:\VNSProject\Ecomm\ECommerce.UI\bin\ApplicationInsights.config
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\csc.exe
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\System.Collections.Immutable.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\System.Reflection.Metadata.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\vbc.exe
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\VBCSCompiler.exe
+F:\VNSProject\Ecomm\ECommerce.UI\bin\roslyn\VBCSCompiler.exe.config
+F:\VNSProject\Ecomm\ECommerce.UI\bin\ECommerce.UI.dll.config
+F:\VNSProject\Ecomm\ECommerce.UI\bin\ECommerce.UI.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\ECommerce.UI.pdb
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Antlr3.Runtime.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\DotNetShipping.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Ecommerce.DAL.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Ecommerce.Repo.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\EntityFramework.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\EntityFramework.SqlServer.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AI.Agent.Intercept.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AI.Web.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AI.WindowsServer.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.ApplicationInsights.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.Google.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Web.Infrastructure.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Newtonsoft.Json.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Owin.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\PagedList.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\PagedList.Mvc.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.Helpers.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.Mvc.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.Optimization.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.Razor.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.WebPages.Deployment.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.WebPages.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.WebPages.Razor.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\VNS.Accounts.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\WebGrease.dll
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Ecommerce.DAL.pdb
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Ecommerce.Repo.pdb
+F:\VNSProject\Ecomm\ECommerce.UI\bin\VNS.Accounts.pdb
+F:\VNSProject\Ecomm\ECommerce.UI\bin\DotNetShipping.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AI.Web.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AI.WindowsServer.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.ApplicationInsights.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\PagedList.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\PagedList.Mvc.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.Helpers.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.Mvc.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.Optimization.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.Razor.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.WebPages.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.WebPages.Deployment.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\System.Web.WebPages.Razor.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Antlr3.Runtime.pdb
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Newtonsoft.Json.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\EntityFramework.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\EntityFramework.SqlServer.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.Google.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.xml
+F:\VNSProject\Ecomm\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\VNSProject\Ecomm\ECommerce.UI\obj\Debug\ECommerce.UI.csprojResolveAssemblyReference.cache
+F:\VNSProject\Ecomm\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.InitialCreate.resources
+F:\VNSProject\Ecomm\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.UserId.resources
+F:\VNSProject\Ecomm\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userimage.resources
+F:\VNSProject\Ecomm\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userUnique_key.resources
+F:\VNSProject\Ecomm\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userunique_key2.resources
+F:\VNSProject\Ecomm\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.GenerateResource.Cache
+F:\VNSProject\Ecomm\ECommerce.UI\obj\Debug\ECommerce.UI.dll
+F:\VNSProject\Ecomm\ECommerce.UI\obj\Debug\ECommerce.UI.pdb
+E:\VnextProjects\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csprojResolveAssemblyReference.cache
+E:\VnextProjects\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.InitialCreate.resources
+E:\VnextProjects\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.UserId.resources
+E:\VnextProjects\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userimage.resources
+E:\VnextProjects\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userUnique_key.resources
+E:\VnextProjects\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userunique_key2.resources
+E:\VnextProjects\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.BussinesAccount.resources
+E:\VnextProjects\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.GenerateResource.Cache
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\ApplicationInsights.config
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\csc.exe
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\System.Collections.Immutable.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\System.Reflection.Metadata.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\vbc.exe
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe.config
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\ECommerce.UI.dll.config
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\ECommerce.UI.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\ECommerce.UI.pdb
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Antlr3.Runtime.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\DotNetShipping.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\EntityFramework.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\EntityFramework.SqlServer.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\FoolproofValidation.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AI.Agent.Intercept.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AI.Web.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Web.Infrastructure.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Newtonsoft.Json.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Owin.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\PagedList.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\PagedList.Mvc.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.Helpers.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.Mvc.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.Optimization.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.Razor.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.WebPages.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Razor.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\VNS.Accounts.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\WebGrease.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.pdb
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.pdb
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\VNS.Accounts.pdb
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\DotNetShipping.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AI.Web.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\PagedList.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\PagedList.Mvc.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.Helpers.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.Mvc.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.Optimization.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.Razor.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.WebPages.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Razor.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Antlr3.Runtime.pdb
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Newtonsoft.Json.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\EntityFramework.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\EntityFramework.SqlServer.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.pdb
+F:\other projects\online store\ECommerce.UI\bin\ApplicationInsights.config
+F:\other projects\online store\ECommerce.UI\bin\roslyn\csc.exe
+F:\other projects\online store\ECommerce.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\other projects\online store\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\other projects\online store\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\other projects\online store\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\other projects\online store\ECommerce.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\other projects\online store\ECommerce.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\other projects\online store\ECommerce.UI\bin\roslyn\System.Collections.Immutable.dll
+F:\other projects\online store\ECommerce.UI\bin\roslyn\System.Reflection.Metadata.dll
+F:\other projects\online store\ECommerce.UI\bin\roslyn\vbc.exe
+F:\other projects\online store\ECommerce.UI\bin\roslyn\VBCSCompiler.exe
+F:\other projects\online store\ECommerce.UI\bin\roslyn\VBCSCompiler.exe.config
+F:\other projects\online store\ECommerce.UI\bin\ECommerce.UI.dll.config
+F:\other projects\online store\ECommerce.UI\bin\ECommerce.UI.dll
+F:\other projects\online store\ECommerce.UI\bin\ECommerce.UI.pdb
+F:\other projects\online store\ECommerce.UI\bin\Antlr3.Runtime.dll
+F:\other projects\online store\ECommerce.UI\bin\DotNetShipping.dll
+F:\other projects\online store\ECommerce.UI\bin\Ecommerce.DAL.dll
+F:\other projects\online store\ECommerce.UI\bin\Ecommerce.Repo.dll
+F:\other projects\online store\ECommerce.UI\bin\EntityFramework.dll
+F:\other projects\online store\ECommerce.UI\bin\EntityFramework.SqlServer.dll
+F:\other projects\online store\ECommerce.UI\bin\FoolproofValidation.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AI.Agent.Intercept.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AI.Web.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AI.WindowsServer.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.ApplicationInsights.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.Google.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.dll
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Web.Infrastructure.dll
+F:\other projects\online store\ECommerce.UI\bin\Newtonsoft.Json.dll
+F:\other projects\online store\ECommerce.UI\bin\Owin.dll
+F:\other projects\online store\ECommerce.UI\bin\PagedList.dll
+F:\other projects\online store\ECommerce.UI\bin\PagedList.Mvc.dll
+F:\other projects\online store\ECommerce.UI\bin\System.Web.Helpers.dll
+F:\other projects\online store\ECommerce.UI\bin\System.Web.Mvc.dll
+F:\other projects\online store\ECommerce.UI\bin\System.Web.Optimization.dll
+F:\other projects\online store\ECommerce.UI\bin\System.Web.Razor.dll
+F:\other projects\online store\ECommerce.UI\bin\System.Web.WebPages.Deployment.dll
+F:\other projects\online store\ECommerce.UI\bin\System.Web.WebPages.dll
+F:\other projects\online store\ECommerce.UI\bin\System.Web.WebPages.Razor.dll
+F:\other projects\online store\ECommerce.UI\bin\VNS.Accounts.dll
+F:\other projects\online store\ECommerce.UI\bin\WebGrease.dll
+F:\other projects\online store\ECommerce.UI\bin\Ecommerce.DAL.pdb
+F:\other projects\online store\ECommerce.UI\bin\Ecommerce.DAL.dll.config
+F:\other projects\online store\ECommerce.UI\bin\Ecommerce.Repo.pdb
+F:\other projects\online store\ECommerce.UI\bin\Ecommerce.Repo.dll.config
+F:\other projects\online store\ECommerce.UI\bin\VNS.Accounts.pdb
+F:\other projects\online store\ECommerce.UI\bin\VNS.Accounts.dll.config
+F:\other projects\online store\ECommerce.UI\bin\DotNetShipping.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AI.Web.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AI.WindowsServer.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.ApplicationInsights.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\other projects\online store\ECommerce.UI\bin\PagedList.xml
+F:\other projects\online store\ECommerce.UI\bin\PagedList.Mvc.xml
+F:\other projects\online store\ECommerce.UI\bin\System.Web.Helpers.xml
+F:\other projects\online store\ECommerce.UI\bin\System.Web.Mvc.xml
+F:\other projects\online store\ECommerce.UI\bin\System.Web.Optimization.xml
+F:\other projects\online store\ECommerce.UI\bin\System.Web.Razor.xml
+F:\other projects\online store\ECommerce.UI\bin\System.Web.WebPages.xml
+F:\other projects\online store\ECommerce.UI\bin\System.Web.WebPages.Deployment.xml
+F:\other projects\online store\ECommerce.UI\bin\System.Web.WebPages.Razor.xml
+F:\other projects\online store\ECommerce.UI\bin\Antlr3.Runtime.pdb
+F:\other projects\online store\ECommerce.UI\bin\Newtonsoft.Json.xml
+F:\other projects\online store\ECommerce.UI\bin\EntityFramework.xml
+F:\other projects\online store\ECommerce.UI\bin\EntityFramework.SqlServer.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.Google.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.xml
+F:\other projects\online store\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\other projects\online store\ECommerce.UI\obj\Debug\ECommerce.UI.csprojResolveAssemblyReference.cache
+F:\other projects\online store\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.InitialCreate.resources
+F:\other projects\online store\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.UserId.resources
+F:\other projects\online store\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userimage.resources
+F:\other projects\online store\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userUnique_key.resources
+F:\other projects\online store\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userunique_key2.resources
+F:\other projects\online store\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.BussinesAccount.resources
+F:\other projects\online store\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.GenerateResource.Cache
+F:\other projects\online store\ECommerce.UI\obj\Debug\ECommerce.UI.dll
+F:\other projects\online store\ECommerce.UI\obj\Debug\ECommerce.UI.pdb
+F:\other projects\online store\ECommerce.UI\bin\PayPalCoreSDK.dll
+F:\other projects\online store\ECommerce.UI\bin\log4net.dll
+F:\other projects\online store\ECommerce.UI\bin\log4net.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\log4net.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\PayPalCoreSDK.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\log4net.xml
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\PayPal.dll
+E:\VnextProjects\ECommerce\ECommerce.UI\bin\PayPal.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\ApplicationInsights.config
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\csc.exe
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\System.Collections.Immutable.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\System.Reflection.Metadata.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\vbc.exe
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe
+H:\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe.config
+H:\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.dll.config
+H:\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.pdb
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Antlr3.Runtime.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\DotNetShipping.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.SqlServer.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\FoolproofValidation.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\log4net.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Agent.Intercept.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.PerfCounterCollector.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Web.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Web.Infrastructure.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Newtonsoft.Json.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Owin.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.Mvc.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\PayPal.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\PayPalCoreSDK.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Helpers.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Mvc.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Optimization.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Razor.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Razor.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\VNS.Accounts.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\WebGrease.dll
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.pdb
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.pdb
+H:\ECommerce\ECommerce\ECommerce.UI\bin\VNS.Accounts.pdb
+H:\ECommerce\ECommerce\ECommerce.UI\bin\DotNetShipping.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\log4net.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Web.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Newtonsoft.Json.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.Mvc.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\PayPal.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Helpers.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Mvc.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Optimization.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Razor.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Razor.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Antlr3.Runtime.pdb
+H:\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.SqlServer.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.xml
+H:\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+H:\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csprojResolveAssemblyReference.cache
+H:\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.InitialCreate.resources
+H:\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.UserId.resources
+H:\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userimage.resources
+H:\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userUnique_key.resources
+H:\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userunique_key2.resources
+H:\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.BussinesAccount.resources
+H:\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.GenerateResource.Cache
+H:\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.dll
+H:\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\ApplicationInsights.config
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\csc.exe
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\System.Collections.Immutable.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\System.Reflection.Metadata.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\vbc.exe
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe.config
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.dll.config
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Antlr3.Runtime.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\DotNetShipping.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.SqlServer.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\FoolproofValidation.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\log4net.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Web.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Web.Infrastructure.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Newtonsoft.Json.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Owin.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.Mvc.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PayPal.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PayPalCoreSDK.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Helpers.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Mvc.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Optimization.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Razor.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Razor.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\VNS.Accounts.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\WebGrease.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\VNS.Accounts.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\DotNetShipping.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\log4net.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Web.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Newtonsoft.Json.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.Mvc.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PayPal.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Helpers.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Mvc.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Optimization.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Razor.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Razor.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Antlr3.Runtime.pdb
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.SqlServer.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csprojResolveAssemblyReference.cache
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.InitialCreate.resources
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.UserId.resources
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userimage.resources
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userUnique_key.resources
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userunique_key2.resources
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.BussinesAccount.resources
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.GenerateResource.Cache
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.dll
+F:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\ApplicationInsights.config
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\csc.exe
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\System.Collections.Immutable.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\System.Reflection.Metadata.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\vbc.exe
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe.config
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.dll.config
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Antlr3.Runtime.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\DotNetShipping.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.SqlServer.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\FoolproofValidation.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\log4net.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Web.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Web.Infrastructure.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Newtonsoft.Json.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Owin.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.Mvc.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PayPal.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PayPalCoreSDK.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Helpers.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Mvc.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Optimization.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Razor.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Razor.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\VNS.Accounts.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\WebGrease.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\VNS.Accounts.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\DotNetShipping.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\log4net.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Web.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Newtonsoft.Json.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.Mvc.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\PayPal.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Helpers.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Mvc.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Optimization.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Razor.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Razor.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Antlr3.Runtime.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.SqlServer.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.InitialCreate.resources
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.UserId.resources
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userimage.resources
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userUnique_key.resources
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userunique_key2.resources
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.BussinesAccount.resources
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.GenerateResource.Cache
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.dll
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.pdb
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.dll.config
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.dll.config
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\bin\VNS.Accounts.dll.config
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csprojAssemblyReference.cache
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.CoreCompileInputs.cache
+E:\Vnext\Ecomm\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.CopyComplete
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\ApplicationInsights.config
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\csc.exe
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\System.Collections.Immutable.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\System.Reflection.Metadata.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\vbc.exe
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\roslyn\VBCSCompiler.exe.config
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.dll.config
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\ECommerce.UI.pdb
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Antlr3.Runtime.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\DotNetShipping.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.SqlServer.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\FoolproofValidation.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\log4net.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Web.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Web.Infrastructure.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Newtonsoft.Json.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Owin.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.Mvc.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\PayPal.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\PayPalCoreSDK.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Helpers.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Mvc.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Optimization.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Razor.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Razor.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\VNS.Accounts.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\WebGrease.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.pdb
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.DAL.dll.config
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.pdb
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Ecommerce.Repo.dll.config
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\VNS.Accounts.pdb
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\VNS.Accounts.dll.config
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\DotNetShipping.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\log4net.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.DependencyCollector.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.Web.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AI.WindowsServer.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.ApplicationInsights.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Newtonsoft.Json.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\PagedList.Mvc.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\PayPal.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Helpers.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Mvc.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Optimization.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.Razor.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Deployment.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\System.Web.WebPages.Razor.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Antlr3.Runtime.pdb
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\EntityFramework.SqlServer.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Google.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csprojAssemblyReference.cache
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.InitialCreate.resources
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.UserId.resources
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userimage.resources
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userUnique_key.resources
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.userunique_key2.resources
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.Migrations.BussinesAccount.resources
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.GenerateResource.cache
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.CoreCompileInputs.cache
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.csproj.CopyComplete
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.dll
+E:\Vnext\Ecomm ok\ECommerce\ECommerce\ECommerce.UI\obj\Debug\ECommerce.UI.pdb

@@ -1,0 +1,251 @@
+﻿
+@{
+    ViewBag.Title = "Assign Attribute";
+}
+
+@using Ecommerce.DAL.Enums
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4> Assign Attribute </h4>
+    </div>
+    <div class="panel-body">
+
+        <div class="form-group">
+            <div class="col-sm-3 navparent" id="navHead">
+                @Html.Label("Heading", new { @class = "control-label", @for = "Head" })
+                @Html.DropDownList("Head", new SelectList(ViewBag.NavigationHeading, "Id", "Name"), "Select Navigation Heading", new { @class = "form-control" })
+            </div>
+            <div class="col-sm-3 navparent" id="navcate">
+                @Html.Label("Category", new { @class = "control-label", @for = "Category" })
+                @Html.DropDownList("Category", Enumerable.Empty<SelectListItem>(), "Select Navigation Category", new { @class = "form-control" })
+            </div>
+            <div class="col-sm-3">
+                @Html.Label("Links", new { @class = "control-label", @for = "Links" })
+                @Html.DropDownList("Links", Enumerable.Empty<SelectListItem>(), "Select Navigation Link", new { @class = "form-control" })
+                <span class="text-danger" style="display:none" id="vldLink">This field is required.</span>
+            </div>
+            <div class="col-sm-2">
+                <label class="control-label" style="display:block">&nbsp;</label>
+                <a href="javascript:;" class="btn btn-sm btn-primary" id="btnAddAttr">Add Attribute</a>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <hr />
+                <div id="tbl">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-sm-12 text-right">
+                <div class="btn-toolbar">
+                    @*<button class="btn-primary btn" type="submit">Submit</button>
+                    <button class="btn-default btn" type="reset">Cancel</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="attributemodal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Attribute</h4>
+            </div>
+            <div class="modal-body" id="reset">
+                @Html.Action("Create", "Attribute")
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="attributeEditmodal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Attribute</h4>
+            </div>
+            <div class="modal-body" id="editRest">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section Scripts {
+    <script type="text/javascript">
+        var fieldsCount = 0;
+        var fieldsECount = 0;
+        $('#Head').change(function () {
+            getNavCategories();
+        });
+        function ShowEdit() {
+            $('#attributeEditmodal').modal();
+            fieldsECount = $('#hdnVals').val();
+        }
+
+        function CloseEdit() {
+            $('#attributeEditmodal').modal('hide');
+        }
+        $('#Category').change(function () {
+            getLinks();
+        })
+
+        function getLinks() {
+            var headVal = $('#Category').val();
+            if (headVal) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/category/GetLinks/' + headVal,
+                    success: function (data) {
+                        if (data == false) {
+                            $('#Links').html('<option>Select Navigation Links</option>')
+                        } else {
+                            var htmlcate = '<option>Select Navigation Links</option>';
+                            for (var i = 0; i < data.length; i++) {
+                                htmlcate += '<option value="' + data[i].Id + '">' + data[i].Name + '</option>'
+                            }
+                            $('#Links').html(htmlcate);
+                        }
+                    }
+                })
+            } else {
+                $('#Links').html('<option>Select Navigation Links</option>')
+            }
+
+        }
+
+        function getNavCategories() {
+            var headVal = $('#Head').val();
+            if (headVal) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/category/GetNavCategories/' + headVal,
+                    success: function (data) {
+                        if (data == false) {
+                            $('#Category').html('<option>Select Navigation Category</option>')
+                        } else {
+                            var htmlcate = '<option>Select Navigation Category</option>';
+                            for (var i = 0; i < data.length; i++) {
+                                htmlcate += '<option value="' + data[i].Id + '">' + data[i].Name + '</option>'
+                            }
+                            $('#Category').html(htmlcate);
+                        }
+                    }
+                })
+            } else {
+                $('#Category').html('<option>Select Navigation Category</option>')
+            }
+
+        }
+
+        $('#Links').change(function () {
+            var id = $(this).val();
+            if (id) {
+                $('#hdnCategoryId').val(id);
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/attribute/LinksAttribute/' + id,
+                    success: function (data) {
+                        $('#tbl').html(data);
+                    }
+                })
+            } else {
+                $('#tbl').html('');
+                $('#hdnCategoryId').val('');
+            }
+        })
+        $('#btnAddAttr').click(function () {
+            var id = $('#Links').val();
+            if (id) {
+                $('#vldLink').hide();
+                $('#attributemodal').modal();
+            } else {
+                $('#vldLink').show();
+            }
+        })
+        
+        $(document).on('click', '.btnadd', function(){
+            var newval = $(this).closest('.attricontainer').clone();
+            $(newval).find('.form-control').val('');
+            $(newval).find('.valId').val('');
+            $('#valcontainer').append(newval);
+            fieldsCount++;
+            renameValue();
+        })
+
+        $(document).on('click', '.btnrmv', function () {
+            if (fieldsCount > 0) {
+                $(this).closest('.attricontainer').remove();
+                fieldsCount--;
+                renameValue();
+            }
+        })
+
+        function renameValue() {
+            var values = $('.attrval');
+            var validation = $('.validValue');
+            for (var i = 0; i < values.length; i++) {
+                $(values[i]).attr('name', 'Values[' + i + '].value');
+                $(validation[i]).attr('data-valmsg-for', 'Values[' + i + '].value');
+            }
+            resetValidation();
+        }
+
+
+        $(document).on('click', '.btnEadd', function () {
+            var newval = $(this).closest('.attricontainer').clone();
+            $(newval).find('.form-control').val('');
+            $('#evalcontainer').append(newval);
+            fieldsECount++;
+            renameeValue();
+        })
+
+        $(document).on('click', '.btnErmv', function () {
+            if (fieldsECount > 0) {
+                $(this).closest('.attricontainer').remove();
+                fieldsCount--;
+                renameeValue();
+            }
+        })
+
+        function renameeValue() {
+            var values = $('.eattrval');
+            var validation = $('.evalidValue');
+            for (var i = 0; i < values.length; i++) {
+                $(values[i]).attr('name', 'Values[' + i + '].value');
+                $(validation[i]).attr('data-valmsg-for', 'Values[' + i + '].value');
+            }
+            resetValidation();
+        }
+        function resetForm() {
+            $('#attributemodal').modal('hide');
+            $.ajax({
+                type:'GET',
+                url:'/admin/attribute/create',
+                success: function (data) {
+                    $('#reset').html(data);
+                }
+            })
+        }
+
+    </script>
+}

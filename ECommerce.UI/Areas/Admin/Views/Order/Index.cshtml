@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#home1" data-toggle="tab">Client Orders</a>
+            </li>
+            @*<li>
+                <a href="#profile1" data-toggle="tab">Bussiness Orders</a>
+            </li>*@
+            <li>
+            </li>
+        </ul>
+        <div class="options">
+            <a href="#"><i class="fa fa-cogs"></i></a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="tab-content">
+            <div class="tab-pane active" id="home1">
+                @Html.Action("Orders", "Order")
+            </div>
+            <div class="tab-pane" id="profile1">
+                @Html.Action("B2BOrders", "Order")
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).on('click', '.btnChangeStatus', function () {
+            var status = $(this).data('status');
+            var Id = $(this).closest('td').find('.hdnId').val();
+            $.ajax({
+                type: 'GET',
+                url: '/admin/Order/changestatus/' + Id + '?status=' + status,
+                success: function (data) {
+                    $('.panel-body').html(data);
+                }
+            })
+        })
+    </script>
+}

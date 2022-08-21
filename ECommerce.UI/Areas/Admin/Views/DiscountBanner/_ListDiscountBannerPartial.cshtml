@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Ecommerce.DAL.SaleBanner>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Discount Banner Images</h4>
+                <div class="options">
+
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Image</th>
+                                <th>Text</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null && Model.Count() > 0)
+                            {
+                                int i = 1;
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@i</td>
+                                        @if (@item.ImageUrl != null)
+                                        {
+                                            <td><img src="@item.ImageUrl" class="img-responsive" style="width:50px;height:50px" /></td>
+                                        }
+                                        else
+                                        {
+                                            <td><img src="~/uploadimages/noimage.jpg" class="img-responsive" style="width:50px;height:50px" /></td>
+                                        }
+
+                                        <td>@item.Text</td>
+                                        <td>
+                                            @Ajax.ActionLink("Edit", "Edit", "DiscountBanner", new { id = item.Id }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "crtDiscBanner", OnSuccess="BindColorPicker()" }, new { @class = "btn btn-primary btn-sm" })
+                                            @Html.ActionLink("Delete", "Delete", "DiscountBanner", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-danger text-center">
+                                        No Record found.
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

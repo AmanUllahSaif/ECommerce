@@ -1,0 +1,148 @@
+﻿@model IEnumerable<ECommerce.UI.Models.CartViewModel>
+    @{
+        ViewBag.Title = "Checkout";
+    }
+
+    <div class="container" style="min-height:425px;position:relative">
+        @if (ViewBag.total != null && !ViewBag.total.ToString().Equals("0"))
+        {
+            <a href="@Url.Action("Shippinginfo", "shopping")" class="btn btn-primary" style="position:absolute;bottom:5px;right:0;border-radius:0;">Proceed To Check Out</a>
+        }
+        <div class="col-sm-12">
+            <h3>
+                You have
+                @if (Model != null && Model.Count() > 0)
+                {
+                    <label>@Model.Count()</label>
+                }  item(s) in cart.
+            </h3>
+        </div>
+        @if (Request.QueryString["message"] != null)
+        {
+            <div class="col-sm-12 alert alert-danger">
+                @Request.QueryString["message"]
+            </div>
+        }
+        <div class="col-sm-4 shoppingsetps">
+            <div class="col-sm-12 step active">
+                <span> 1 </span>
+                Check out
+            </div>
+            <div class="col-sm-12 step">
+                <span> 2 </span>
+                Shipping Info
+            </div>
+            <div class="col-sm-12 step">
+                <span> 3 </span>
+                Payment
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="table-responsive">
+                <table class="table table-cart">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Discription</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th></th>
+                            <th>Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Count() > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                decimal price = 0;
+                                var combinationDetails = item.AttributeCombination.AttribCombinationDetails.Where(X => X.IsActive);
+
+                                if (User.Identity.IsAuthenticated && User.IsInRole("Bussines"))
+                                {
+                                    price = item.PurchasePrice;
+                                }
+                                else
+                                {
+                                    if (item.Product.Sale)
+                                    {
+                                        price = item.Product.Price - (item.Product.Price * (item.Product.Discount.Value / 100));
+                                    }
+                                    else
+                                    {
+                                        price = item.Product.Price;
+                                    }
+                                }
+                                <tr>
+                                    <td><img src="@Url.Content(item.Product.ProductImages.FirstOrDefault(x => x.IsActive).Url)" class="img-responsive img-rounded" /></td>
+                                    <td>
+                                        @item.Product.Name <br />
+
+                                        @foreach (var pr in combinationDetails)
+                                        {
+                                            @: @pr.AttributeValue.Value ,
+                                        }
+                                    </td>
+                                    <td>
+                                        @price.ToString("#.00") $
+                                    </td>
+                                    <td>@item.Quantity</td>
+                                    <td>=</td>
+                                    <td>@((price * item.Quantity).ToString("#.00")) $</td>
+                                    <td>
+                                        <a href="javaScript:;" class="fa fa-2x fa-trash-o cartDel" data-id="@item.StockId"></a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <hr style="width:100%" />
+            @Html.Action("CustomShirtsCheckOut", "Shopping")
+            <hr style="width:100%" />
+            <div class="col-sm-4 pull-right text-right">
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Bussines"))
+                {
+                    <label style="margin-top:10px">Total : @Model.Sum(x => x.PurchasePrice * x.Quantity).ToString("0.##") $</label>
+                }
+                else
+                {
+                    <label>Sub Total : </label> <label>@ViewBag.total.ToString("#.00") $</label>    
+                }
+                
+                <br />
+                <label>Shipping Charges : </label> <label>0</label>
+                <br />
+
+            </div>
+        </div>
+
+    </div>
+
+    @section Scripts {
+        <script>
+            $('.cartDel').click(function () {
+                var id = $(this).data('id');
+                $.ajax({
+                    url: '/cart/remove/' + id,
+                    method: 'GET',
+                    success: function (data) {
+                        window.location.reload();
+                    }
+                })
+            });
+            $('.cartDelCustm').click(function () {
+                var id = $(this).data('id');
+                $.ajax({
+                    url: '/cart/removecustom/' + (id - 1),
+                    method: 'GET',
+                    success: function (data) {
+                        window.location.reload();
+                    }
+                })
+            });
+        </script>
+    }

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Ecommerce.DAL.Category>
+
+<div class="header-two">
+    <!-- header-two -->
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Content("~/")"><img src="@Url.Content("~/")Theme/images/logo.png" style="width: 215px;height: 80px;margin-top: -30px;" /></a>
+            </div>
+
+            <div class="collapse navbar-collapse js-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            var childs = item.Childs.Where(x => x.IsActive == true);
+                            <li class="dropdown mega-dropdown">
+                                <a href="#" class="dropdown-toggle">@item.Name <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                                <ul class="dropdown-menu mega-dropdown-menu row">
+                                    @foreach (var child in childs)
+                                    {
+                                        var links = child.Childs.Where(x => x.IsActive == true);
+                                        <li class="col-sm-3">
+                                            <ul>
+                                                <li class="dropdown-header">@child.Name</li>
+                                                @foreach (var link in links)
+                                                {
+                                                    <li><a href="@Url.Content("~/shopping/products/"+ link.Id)">@link.Name</a></li>
+                                                }
+                                            </ul>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    }
+                    <li class="dropdown mega-dropdown">
+                        <a href="@Url.Content("~/shopping/shirts")" class="dropdown-toggle">Custom Shirts </a>
+                    </li>
+                </ul>
+                <div class="header-cart">
+                    <div class="cart">
+                        <div class="w3view-cart bg-red" type="button" name="submit" value="">
+                            <a href="#" class="fa fa-cart-arrow-down" aria-hidden="true"></a>
+                            <div id="crt">
+                                @Html.Action("CartItems", "Cart")
+                            </div>
+                        </div>
+
+                        <div class="w3view-cart bg-blue searchbar" aria-label="Left Align">
+                            <i class="fa fa-search" aria-hidden="true"> </i>
+                            <ul class="dropdown-menu search-menu" style="margin-left:-50px">
+                                <li>
+
+                                    @using (Html.BeginForm("Products", "Shopping", FormMethod.Get))
+                                    {
+                                        <div class="input-group">
+                                            @Html.TextBox("search", "", new { @class = "form-control", placeholder = "Search for...", style = "margin-top:1px" })
+                                            <span class="input-group-btn">
+                                                <button class="btn bg-blue glyphicon glyphicon-search" type="submit" style="color:#ffffff"></button>
+                                            </span>
+                                        </div>
+                                    }
+
+
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <!-- /.nav-collapse -->
+
+        </nav>
+    </div>
+    <div class="clearfix"> </div>
+</div>

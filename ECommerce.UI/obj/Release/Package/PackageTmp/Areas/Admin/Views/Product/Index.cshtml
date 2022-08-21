@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Ecommerce.DAL.Product>
+@{
+    ViewBag.Title = "Index";
+}
+@using PagedList;
+@using PagedList.Mvc;
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        
+            <h4>Products</h4>
+        <div class="pull-right">
+            <a href="@Url.Action("Create", "Product", new { area="admin"})" class="btn btn-success">Create New</a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="@item.ProductImages.FirstOrDefault(x => x.IsActive).Url" class="img-responsive" style="width:50px;height:50px" />
+                                </td>
+                                <td>@item.Name</td>
+                                <td>@item.Description</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", "Product", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                                    @Html.ActionLink("Delete", "Delete", "Product", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-danger text-center">
+                                No Record found.
+                            </td>
+                        </tr>
+                    }
+                    
+                </tbody>
+            </table>
+            @Html.PagedListPager((IPagedList)Model,page=>Url.Action("index",new { page }),new PagedListRenderOptions() {Display=PagedListDisplayMode.IfNeeded})
+        </div>
+    </div>
+</div>

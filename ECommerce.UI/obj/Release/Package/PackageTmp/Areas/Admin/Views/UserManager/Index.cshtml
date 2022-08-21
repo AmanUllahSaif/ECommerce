@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ECommerce.UI.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4>Users</h4>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Discription</th>
+                        <th>Account Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        //var roleManger = new Ro
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(item.Image))
+                                    {
+                                        <img src="@Url.Content(item.Image)" style="height:50px; width:50px" class="img-responsive" />
+                                    }
+                                </td>
+                                <td>@item.Email</td>
+                                <td>
+                                    @item.BussinesName,<br /> @item.Address, @item.PhoneNumber
+                                </td>
+                                <td></td>
+                                <td>
+                                    @if (item.IsApproved)
+                                    {
+                                        @Html.ActionLink("Disapprove", "Disapprove", "UserManager", new { area = "Admin", email = item.Email }, new { @class = "btn btn-danger" })
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Approve", "Approve", "UserManager", new { area = "Admin", email = item.Email }, new { @class = "btn btn-success" })
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@model Ecommerce.DAL.Vendor
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.LabelFor(x => x.Name, new { @class="label-control"})
+        @Html.TextBoxFor(x => x.Name, new { @class="form-control"})
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+    <div class="col-md-12">
+        @Html.LabelFor(x => x.Email, new { @class = "label-control" })
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+    <div class="col-md-12">
+        @Html.LabelFor(x => x.Contact, new { @class = "label-control" })
+        @Html.TextBoxFor(x => x.Contact, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Contact)
+    </div>
+</div>

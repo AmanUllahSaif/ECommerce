@@ -1,0 +1,229 @@
+﻿@model Ecommerce.DAL.Order
+@{
+    ViewBag.Title = "Detail";
+    int i = 0;
+}
+
+@using Ecommerce.DAL.Enums
+<div class="printPanel">
+
+    <div class="panel panel-default ">
+        <!-- <div class="panel-heading">
+            <h4>Invoice</h4>
+        </div> -->
+        <div class="panel-body">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <h4>
+                        Invoice # <br>
+                        <strong>@Model.Id</strong>
+                    </h4>
+                </div>
+                <div class="pull-right">
+                    <h4 class="text-right"><img src="@Url.Content("~/theme/images/urz2.png")" alt="Avant" style="height:75px"></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="background: #85c744; padding: 5px 10px; color: #fff; border-radius: 1px; margin: 20px 0 20px; text-align:center">Customer Invoice</h3>
+                    <div class="pull-left">
+                        <address>
+                            @Model.Name <br />
+                            @Model.Address <br />
+                            @Model.City <br />
+                            @Model.Country
+                        </address>
+                    </div>
+                    <div class="pull-right">
+                        <ul class="text-right list-unstyled">
+                            <li><strong>Date:</strong> @Model.CreatedOn.ToString("dd-MMMM-yyyy")</li>
+                            <li><strong>Due:</strong> @Model.CreatedOn.AddDays(3).ToString("dd-MMMM-yyyy")</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    @if (Model != null && Model.OrderDetails != null && Model.OrderDetails.Where(x => x.IsActive).Count() > 0)
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Item</th>
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.OrderDetails)
+                                    {
+                                        i++;
+                                        <tr>
+                                            <td>@i</td>
+                                            <td>@item.Product.Name</td>
+                                            <td>
+                                                @foreach (var comb in item.Stock.AttributeCombination.AttribCombinationDetails)
+                                                {
+                                                    <labe>@comb.AttributeValue.Value , </labe>
+                                                }
+                                            </td>
+                                            <td>@item.Quantity</td>
+                                            <td>$ @item.Price</td>
+                                            <td>$ @(item.Price * item.Quantity)</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                            <hr />
+                    }
+
+                    @if (Model != null && Model.CustomShirtsOrders != null && Model.CustomShirtsOrders.Where(x => x.IsActive).Count() > 0)
+                    {
+                        int j = 0;
+                        var customDetails = Model.CustomShirtsOrders.Where(x => x.IsActive);
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Item</th>
+                                        <th>Color</th>
+                                        <th>Price</th>
+                                        <th>Front Price</th>
+                                        <th>Back Price</th>
+                                        <th>Size</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in customDetails)
+                                    {
+                                        j++;
+                                        <tr>
+                                            <td>@j</td>
+                                            <td>
+                                                @switch (item.Type)
+                                                {
+                                                    case (int)ShirtType.ShortSleeveRound:
+                                                        <label>Short Sleeve Round Neck</label>
+                                                        break;
+                                                    case (int)ShirtType.LongSleeveRound:
+                                                        <label>Long Sleeve Round Neck</label>
+                                                        break;
+                                                    case (int)ShirtType.ShortSleeveV:
+                                                        <label>Short Sleeve V Neck</label>
+                                                        break;
+                                                    case (int)ShirtType.LongSleeveV:
+                                                        <label>Long Sleeve V Neck</label>
+                                                        break;
+                                                    default:
+                                                        break;
+                                                }
+                                            </td>
+                                            <td>
+                                                <div style="height:20px;width:20px;border:1px Solid;background-color:@item.ShirtColor"></div> Code: @item.ShirtColor
+                                            </td>
+                                            <td>@item.ShirtPrice</td>
+                                            <td>
+                                                @if (item.FrontPrice != null)
+                                                {
+                                                    <a href="@item.FrontImageUrl">$ @item.FrontPrice.GetValueOrDefault().ToString("#.00")</a>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (item.BackPrice != null)
+                                                {
+                                                    <a href="@item.BackImageUrl">$ @item.FrontPrice.GetValueOrDefault().ToString("#.00")</a>
+                                                }
+                                            </td>
+                                            <td>
+                                                @switch (item.Size)
+                                                {
+                                                    case (int)ShirtSizeType.LG:
+                                                        <label>Large</label>
+                                                        break;
+
+                                                    case (int)ShirtSizeType.MD:
+                                                        <label>Medium</label>
+                                                        break;
+
+                                                    case (int)ShirtSizeType.SM:
+                                                        <label>Small</label>
+                                                        break;
+                                                    case (int)ShirtSizeType.XL:
+                                                        <label>Extra Small</label>
+                                                        break;
+                                                    default:
+                                                        break;
+                                                }
+
+                                            </td>
+                                            <td>
+                                               @item.Quantity
+                                            </td>
+                                            <td>$ @(((item.FrontPrice.GetValueOrDefault() + item.BackPrice.GetValueOrDefault() + item.ShirtPrice) * item.Quantity).ToString("#.00")) </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                            <hr />
+                    }
+                </div>
+            </div>
+            <div class="row" style="border-radius: 0px;">
+                <div class="col-md-3 col-md-offset-9">
+                    <h3 class="text-right">USD @((Model.OrderDetails.Where(x => x.IsActive).Sum(x => x.Price *x.Quantity) + Model.CustomShirtsOrders.Where(x => x.IsActive).Sum(x => (x.BackPrice.GetValueOrDefault()+x.FrontPrice.GetValueOrDefault()+x.ShirtPrice)*x.Quantity)).ToString("0.##"))</h3>
+                </div>
+            </div>
+            <div class="panel-footer hidden-print">
+                <div class="pull-right">
+                    <a href="javascript:;" class="btn btn-inverse btnPrint"><i class="fa fa-print"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script type="text/javascript">
+
+        $('.btnPrint').click(function () {
+            var styleSheets = $('link');
+            var pWin = window.open('', 'Invoice Print', 'height=600,width=800');
+            pWin.document.write('<html><head><title>Purchase</title>');
+            for (var i = 0; i < styleSheets.length; i++) {
+                var linkTag = "<link rel='stylesheet' type='text/css' href='" + $(styleSheets[i]).attr('href') + "' />";
+                pWin.document.write(linkTag);
+            }
+            pWin.document.write('</head><body >');
+            pWin.document.write($('.printPanel').html());
+            pWin.document.write('</body></html>');
+            setTimeout(function () {
+                pWin.print();
+            }, 1000)
+            $(pWin.document).ready(function () {
+                //pWin.print();
+            });
+        })
+
+        @*$('.btnPrint').click(function () {
+            var styleSheets = $('link');
+            var pWin = window.open('', 'my div', 'height=400,width=600');
+            pWin.document.write('<html><head><title>Order Detail</title>');
+            for (var i = 0; i < styleSheets.length; i++) {
+                var linkTag = "<link href='@Request.Url.Scheme://@Request.Url.Host:@Request.Url.Port" + $(styleSheets[i]).attr('href') + "' />";
+                pWin.document.write(linkTag);
+            }
+            pWin.document.write('</head><body >');
+            pWin.document.write($('.printPanel').html());
+            pWin.document.write('</body></html>');
+            pWin.print();
+        })*@
+    </script>
+}

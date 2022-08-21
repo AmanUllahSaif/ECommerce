@@ -1,0 +1,287 @@
+﻿@model IEnumerable<Ecommerce.DAL.Product>
+@{
+    ViewBag.Title = "Products";
+
+    string priceName = Request.QueryString["price"];
+    List<string> pricelst = new List<string>();
+    if (!string.IsNullOrEmpty(priceName))
+    {
+        pricelst = priceName.Split(',').ToList();
+    }
+
+    string discountFilter = Request.QueryString["discount"];
+    List<string> discountLst = new List<string>();
+    if (!string.IsNullOrEmpty(discountFilter))
+    {
+        discountLst = discountFilter.Split(',').ToList();
+    }
+    bool isAdult = Model.Where(x => x.Category.IsAdultAlert == true).Count() > 0;
+}
+
+<div class="products">
+    <div class="container">
+        <div class="col-md-9 product-w3ls-right">
+            <div class="product-top">
+                <h4>Fashion Store</h4>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="products-row">
+                @if (Model != null && Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        decimal price = 0;
+                        price = item.Price;
+                        item.Packages = item.Packages.Where(x => x.IsActive).ToList();
+                        <div class="col-md-3 product-grids">
+                            <div class="agile-products">
+                                @if (item.Sale)
+                                {
+                                    price = item.Price - (item.Price * (item.Discount.Value / 100));
+                                    <div class="new-tag"><h6>@item.Discount %<br>Off</h6></div>
+                                }
+                                <a href="@Url.Content("~/Shopping/ProductDetail/"+item.Id)"><img src="@Url.Content(item.ProductImages.FirstOrDefault().Url)" class="img-responsive" alt="img"></a>
+                                <div class="agile-product-text">
+                                    <h5><a href="@Url.Content("~/Shopping/ProductDetail/"+item.Id)">@item.Name</a></h5>
+                                    @if (User.Identity.IsAuthenticated && User.IsInRole("Bussines"))
+                                    {
+                                        foreach (var packge in item.Packages)
+                                        {
+                                            <label style="font-size:13px">@packge.StartQuantity - @packge.EndQuantity in @packge.Price.ToString("#.00") $</label> <br />
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <h6>
+                                            @if (item.Sale)
+                                            {
+                                                <del>@item.Price.ToString("#.00") $</del>
+                                            }
+                                            @price.ToString("#.00") $
+                                        </h6>
+                                    }
+
+                                    <form action="#" method="post">
+                                        <a href="@Url.Content("~/Shopping/ProductDetail/"+item.Id)" class="w3ls-cart pw3ls-cart"> View Product </a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="col-md-3 rsidebar">
+            <div class="rsidebar-top">
+                <div class="slider-left">
+                    <h4>Filter By Price</h4>
+                    <div class="row row1 scroll-pane jspScrollable" tabindex="0" style="overflow: hidden; padding: 0px; width: 223px;">
+                        <div class="jspContainer" style="width: 223px; height: 160px;">
+                            <div class="jspPane" style="padding: 0px; width: 246px; top: 0px;">
+                                @if (pricelst.Count > 0)
+                                {
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" @(pricelst.FirstOrDefault(x => x.Contains("0-100")) == null ? "" : "checked") class="pricechkbox" data-val="0-100"><i></i>0 - $100 </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" @(pricelst.FirstOrDefault(x => x.Contains("100-200")) == null ? "" : "checked") class="pricechkbox" data-val="100-200"><i></i>$100 - $200 </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" @(pricelst.FirstOrDefault(x => x.Contains("200-250")) == null ? "" : "checked") class="pricechkbox" data-val="200-250"><i></i>$200 - $250  </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" @(pricelst.FirstOrDefault(x => x.Contains("250-300")) == null ? "" : "checked") class="pricechkbox" data-val="250-300"><i></i>$250 - $300 </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" @(pricelst.FirstOrDefault(x => x.Contains("300-350")) == null ? "" : "checked") class="pricechkbox" data-val="300-350"><i></i>$300 - $350 </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" @(pricelst.FirstOrDefault(x => x.Contains("350-400")) == null ? "" : "checked") class="pricechkbox" data-val="350-400"><i></i>$350 - $400  </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>More</label>
+                                }
+                                else
+                                {
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="pricechkbox" data-val="0-100"><i></i>0 - $100 </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="pricechkbox" data-val="100-200"><i></i>$100 - $200 </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="pricechkbox" data-val="200-250"><i></i>$200 - $250  </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="pricechkbox" data-val="250-300"><i></i>$250 - $300 </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="pricechkbox" data-val="300-350"><i></i>$300 - $350 </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="pricechkbox" data-val="350-400"><i></i>$350 - $400  </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>More</label>
+                                }
+
+                            </div>
+                            <div class="jspVerticalBar">
+                                <div class="jspCap jspCapTop"></div><div class="jspTrack" style="height: 160px;">
+                                    <div class="jspDrag" style="height: 101px;">
+                                        <div class="jspDragTop"></div>
+                                        <div class="jspDragBottom"></div>
+                                    </div>
+                                </div><div class="jspCap jspCapBottom"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="sidebar-row">
+                        <h4>Fashion Store</h4>
+                        <ul class="faq">
+                            <li class="item1">
+                                <a href="#" class="">Clothing<span class="glyphicon glyphicon-menu-down"></span></a>
+                                <ul style="display: none;">
+                                    <li class="subitem1"><a href="#">Ethnic wear</a></li>
+                                    <li class="subitem1"><a href="#">Maternity wear</a></li>
+                                    <li class="subitem1"><a href="#">Sports wear</a></li>
+                                    <li class="subitem1"><a href="#">Inner &amp; nightwear</a></li>
+                                </ul>
+                            </li>
+                            <li class="item2">
+                                <a href="#">Accessories<span class="glyphicon glyphicon-menu-down"></span></a>
+                                <ul style="display: none;">
+                                    <li class="subitem1"><a href="#">Watches</a></li>
+                                    <li class="subitem1"><a href="#">Eyewear</a></li>
+                                    <li class="subitem1"><a href="#">Jewellery</a></li>
+                                    <li class="subitem1"><a href="#">Footwear</a></li>
+                                </ul>
+                            </li>
+                            <li class="item3">
+                                <a href="#">Beauty<span class="glyphicon glyphicon-menu-down"></span></a>
+                                <ul style="display: none;">
+                                    <li class="subitem1"><a href="#">Face Care</a></li>
+                                    <li class="subitem1"><a href="#">Perfumes &amp; Deos</a></li>
+                                    <li class="subitem1"><a href="#">Personal Grooming</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- script for tabs -->
+                        <!-- script for tabs -->
+                    </div>*@
+                <div class="sidebar-row">
+                    <h4>DISCOUNTS</h4>
+                    <div class="row row1 scroll-pane jspScrollable" tabindex="0" style="overflow: hidden; padding: 0px; width: 223px;">
+                        <div class="jspContainer" style="width: 223px; height: 160px;">
+                            <div class="jspPane" style="padding: 0px; width: 246px; top: 0px;">
+                                @if (discountLst.Count > 0)
+                                {
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" @(discountLst.FirstOrDefault(x => x.Contains("0-10")) == null ? "" : "checked") data-val="0-10"><i></i>Upto - 10% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" @(discountLst.FirstOrDefault(x => x.Contains("10-20")) == null ? "" : "checked") data-val="10-20"><i></i>10% - 20% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" @(discountLst.FirstOrDefault(x => x.Contains("20-30")) == null ? "" : "checked") data-val="20-30"><i></i>20% - 30% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" @(discountLst.FirstOrDefault(x => x.Contains("30-40")) == null ? "" : "checked") data-val="30-40"><i></i>30% - 40% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" @(discountLst.FirstOrDefault(x => x.Contains("40-50")) == null ? "" : "checked") data-val="40-50"><i></i>40% - 50% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" @(discountLst.FirstOrDefault(x => x.Contains("50-60")) == null ? "" : "checked") data-val="50-60"><i></i>50% - 60% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" @(discountLst.FirstOrDefault(x => x.Contains("60-70")) == null ? "" : "checked") data-val="60-70"><i></i>60% - 70% </label>
+                                }
+                                else
+                                {
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" data-val="0-10"><i></i>Upto - 10% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" data-val="10-20"><i></i>10% - 20% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" data-val="20-30"><i></i>20% - 30% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" data-val="30-40"><i></i>30% - 40% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" data-val="40-50"><i></i>40% - 50% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" data-val="50-60"><i></i>50% - 60% </label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" class="discountchkbox" data-val="60-70"><i></i>60% - 70% </label>
+                                }
+
+                            </div>
+                            <div class="jspVerticalBar">
+                                <div class="jspCap jspCapTop"></div>
+                                <div class="jspTrack" style="height: 160px;">
+                                    <div class="jspDrag" style="height: 90px; top: 0px;">
+                                        <div class="jspDragTop"></div><div class="jspDragBottom"></div>
+                                    </div>
+                                </div><div class="jspCap jspCapBottom"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="sidebar-row">
+                        <h4>Color</h4>
+                        <div class="row row1 scroll-pane jspScrollable" tabindex="0" style="overflow: hidden; padding: 0px; width: 223px;">
+                            <div class="jspContainer" style="width: 223px; height: 160px;"><div class="jspPane" style="padding: 0px; width: 246px; top: 0px;"><label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>White</label><label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Pink</label><label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Gold</label><label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Blue</label><label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Orange</label><label class="checkbox"><input type="checkbox" name="checkbox"><i></i> Brown</label></div><div class="jspVerticalBar"><div class="jspCap jspCapTop"></div><div class="jspTrack" style="height: 160px;"><div class="jspDrag" style="height: 116px; top: 0px;"><div class="jspDragTop"></div><div class="jspDragBottom"></div></div></div><div class="jspCap jspCapBottom"></div></div></div>
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!-- Modal -->
+<div id="adultModal" class="modal fade" role="dialog" >
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="border:2px solid orangered">
+            <div class="modal-header" style="background-color:black;color:orangered;text-align:center">
+                <h4 class="modal-title" style="font-size:50px;font-weight:bolder">Warning</h4>
+            </div>
+            <div class="modal-body" style="text-align:center">
+                <span style="font-size:125px;">18 +</span>
+            </div>
+            <div class="modal-footer" style="background-color:black;color:orangered;text-align:center">
+                    <h4 style="font-size:50px;font-weight:bolder">Adults Only</h4>
+                <button type="button" class="btn btn-default" id="btnCls">Yes</button>
+                <a href="@Url.Content("~/")" class="btn btn-danger" >No</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+
+            var menu_ul = $('.faq > li > ul'),
+                   menu_a = $('.faq > li > a');
+
+            menu_ul.hide();
+
+            menu_a.click(function (e) {
+                e.preventDefault();
+                if (!$(this).hasClass('active')) {
+                    menu_a.removeClass('active');
+                    menu_ul.filter(':visible').slideUp('normal');
+                    $(this).addClass('active').next().stop(true, true).slideDown('normal');
+                } else {
+                    $(this).removeClass('active');
+                    $(this).next().stop(true, true).slideUp('normal');
+                }
+            });
+
+        });
+        function search() {
+            var url = '@Url.Content("/shopping/Products/"+ViewBag.id)'
+            var queryString = '?price=';
+            var data = $(".pricechkbox");
+            for (var i = 0; i < data.length; i++) {
+                if ($(data[i]).is(':checked')) {
+                    var val = $(data[i]).data('val');
+                    queryString += val + ',';
+                }
+            }
+
+            var discountqueryString = '&discount=';
+            var data = $(".discountchkbox");
+            for (var i = 0; i < data.length; i++) {
+                if ($(data[i]).is(':checked')) {
+                    var val = $(data[i]).data('val');
+                    discountqueryString += val + ',';
+                }
+            }
+
+            url += queryString + discountqueryString;
+            window.location.href = url;
+        }
+        $(".pricechkbox").on("change", function () {
+            search();
+        })
+
+        $(".discountchkbox").on("change", function () {
+            search();
+        })
+        $(function () {
+
+        });
+
+    </script>
+    @if (isAdult)
+    {
+        <div style="position:absolute; height:700px;width:100%; z-index:1000;background-color:black;top:0;left:0;" id="adultBlocker" ></div>
+        <script type="text/javascript">
+            $('#adultModal').modal();
+            $('#btnCls').click(function () {
+                $('#adultModal').modal('hide');
+                $('#adultBlocker').hide();
+            })
+        </script>
+    }
+}

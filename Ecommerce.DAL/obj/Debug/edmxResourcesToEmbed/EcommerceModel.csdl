@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcommerceDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EcommerceDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Attributes" EntityType="EcommerceDBModel.Attribute" />
+    <EntitySet Name="AttributeValues" EntityType="EcommerceDBModel.AttributeValue" />
+    <AssociationSet Name="FK_AttributeValue_Attribute" Association="EcommerceDBModel.FK_AttributeValue_Attribute">
+      <End Role="Attribute" EntitySet="Attributes" />
+      <End Role="AttributeValue" EntitySet="AttributeValues" />
+    </AssociationSet>
+    <EntitySet Name="ProductImages" EntityType="EcommerceDBModel.ProductImage" />
+    <EntitySet Name="AttribCombinationDetails" EntityType="EcommerceDBModel.AttribCombinationDetail" />
+    <EntitySet Name="AttributeCombinations" EntityType="EcommerceDBModel.AttributeCombination" />
+    <AssociationSet Name="FK_AttribCombinationDetail_Attribute" Association="EcommerceDBModel.FK_AttribCombinationDetail_Attribute">
+      <End Role="Attribute" EntitySet="Attributes" />
+      <End Role="AttribCombinationDetail" EntitySet="AttribCombinationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttribCombinationDetail_AttributeCombination" Association="EcommerceDBModel.FK_AttribCombinationDetail_AttributeCombination">
+      <End Role="AttributeCombination" EntitySet="AttributeCombinations" />
+      <End Role="AttribCombinationDetail" EntitySet="AttribCombinationDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttribCombinationDetail_AttributeValue" Association="EcommerceDBModel.FK_AttribCombinationDetail_AttributeValue">
+      <End Role="AttributeValue" EntitySet="AttributeValues" />
+      <End Role="AttribCombinationDetail" EntitySet="AttribCombinationDetails" />
+    </AssociationSet>
+    <EntitySet Name="Stocks" EntityType="EcommerceDBModel.Stock" />
+    <AssociationSet Name="FK_Stock_AttributeCombination" Association="EcommerceDBModel.FK_Stock_AttributeCombination">
+      <End Role="AttributeCombination" EntitySet="AttributeCombinations" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+    <EntitySet Name="Banners" EntityType="EcommerceDBModel.Banner" />
+    <EntitySet Name="OrderDetails" EntityType="EcommerceDBModel.OrderDetail" />
+    <AssociationSet Name="FK_OrderDetail_Stock" Association="EcommerceDBModel.FK_OrderDetail_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <EntitySet Name="Vendors" EntityType="EcommerceDBModel.Vendor" />
+    <EntitySet Name="Purchases" EntityType="EcommerceDBModel.Purchase" />
+    <EntitySet Name="PurchaseDetails" EntityType="EcommerceDBModel.PurchaseDetail" />
+    <AssociationSet Name="FK_Purchase_Vendor" Association="EcommerceDBModel.FK_Purchase_Vendor">
+      <End Role="Vendor" EntitySet="Vendors" />
+      <End Role="Purchase" EntitySet="Purchases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseDetail_Purchase" Association="EcommerceDBModel.FK_PurchaseDetail_Purchase">
+      <End Role="Purchase" EntitySet="Purchases" />
+      <End Role="PurchaseDetail" EntitySet="PurchaseDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseDetail_Stock" Association="EcommerceDBModel.FK_PurchaseDetail_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="PurchaseDetail" EntitySet="PurchaseDetails" />
+    </AssociationSet>
+    <EntitySet Name="B2BDetail" EntityType="EcommerceDBModel.B2BDetail" />
+    <AssociationSet Name="FK_B2BDetail_Stock" Association="EcommerceDBModel.FK_B2BDetail_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="B2BDetail" EntitySet="B2BDetail" />
+    </AssociationSet>
+    <EntitySet Name="Orders" EntityType="EcommerceDBModel.Order" />
+    <AssociationSet Name="FK_B2BDetail_Order" Association="EcommerceDBModel.FK_B2BDetail_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="B2BDetail" EntitySet="B2BDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Order" Association="EcommerceDBModel.FK_OrderDetail_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <EntitySet Name="Products" EntityType="EcommerceDBModel.Product" />
+    <AssociationSet Name="FK_AttributeCombination_Product" Association="EcommerceDBModel.FK_AttributeCombination_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="AttributeCombination" EntitySet="AttributeCombinations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Product" Association="EcommerceDBModel.FK_OrderDetail_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImages_Product" Association="EcommerceDBModel.FK_ProductImages_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductImage" EntitySet="ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseDetail_Product" Association="EcommerceDBModel.FK_PurchaseDetail_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="PurchaseDetail" EntitySet="PurchaseDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_Product" Association="EcommerceDBModel.FK_Stock_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+    <EntitySet Name="CustomShirts" EntityType="EcommerceDBModel.CustomShirt" />
+    <EntitySet Name="CustomShirtsOrders" EntityType="EcommerceDBModel.CustomShirtsOrder" />
+    <AssociationSet Name="FK_CustomShirtsOrder_Order" Association="EcommerceDBModel.FK_CustomShirtsOrder_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="CustomShirtsOrder" EntitySet="CustomShirtsOrders" />
+    </AssociationSet>
+    <EntitySet Name="SaleBanners" EntityType="EcommerceDBModel.SaleBanner" />
+    <EntitySet Name="Categories" EntityType="EcommerceDBModel.Category" />
+    <AssociationSet Name="FK_Attritube_Category" Association="EcommerceDBModel.FK_Attritube_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Attribute" EntitySet="Attributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Category" Association="EcommerceDBModel.FK_Category_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Category1" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category" Association="EcommerceDBModel.FK_Product_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <EntitySet Name="Packages" EntityType="EcommerceDBModel.Package" />
+    <AssociationSet Name="FK_B2BDetail_Package" Association="EcommerceDBModel.FK_B2BDetail_Package">
+      <End Role="Package" EntitySet="Packages" />
+      <End Role="B2BDetail" EntitySet="B2BDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Package_Product" Association="EcommerceDBModel.FK_Package_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Package" EntitySet="Packages" />
+    </AssociationSet>
+    <EntitySet Name="C__MigrationHistory" EntityType="EcommerceDBModel.C__MigrationHistory" />
+    <EntitySet Name="Accounts" EntityType="EcommerceDBModel.Account" />
+    <EntitySet Name="AccountDetails" EntityType="EcommerceDBModel.AccountDetail" />
+    <EntitySet Name="Roles" EntityType="EcommerceDBModel.Role" />
+    <EntitySet Name="Transactions" EntityType="EcommerceDBModel.Transaction" />
+    <EntitySet Name="UserClaims" EntityType="EcommerceDBModel.UserClaim" />
+    <EntitySet Name="UserLogins" EntityType="EcommerceDBModel.UserLogin" />
+    <EntitySet Name="Users" EntityType="EcommerceDBModel.User" />
+    <AssociationSet Name="FK_Account_Account" Association="EcommerceDBModel.FK_Account_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Account1" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountDetail_Account" Association="EcommerceDBModel.FK_AccountDetail_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="AccountDetail" EntitySet="AccountDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountDetail_Transaction" Association="EcommerceDBModel.FK_AccountDetail_Transaction">
+      <End Role="Transaction" EntitySet="Transactions" />
+      <End Role="AccountDetail" EntitySet="AccountDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserClaims_dbo_Users_UserId" Association="EcommerceDBModel.FK_dbo_UserClaims_dbo_Users_UserId">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserClaim" EntitySet="UserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserLogins_dbo_Users_UserId" Association="EcommerceDBModel.FK_dbo_UserLogins_dbo_Users_UserId">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserLogin" EntitySet="UserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="UserRoles" Association="EcommerceDBModel.UserRoles">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Attribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="IsRequired" Type="Boolean" Nullable="false" />
+    <Property Name="CategoryId" Type="Int64" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AttributeValues" Relationship="EcommerceDBModel.FK_AttributeValue_Attribute" FromRole="Attribute" ToRole="AttributeValue" />
+    <NavigationProperty Name="AttribCombinationDetails" Relationship="EcommerceDBModel.FK_AttribCombinationDetail_Attribute" FromRole="Attribute" ToRole="AttribCombinationDetail" />
+    <NavigationProperty Name="Category" Relationship="EcommerceDBModel.FK_Attritube_Category" FromRole="Attribute" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="AttributeValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AttributeId" Type="Int64" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Attribute" Relationship="EcommerceDBModel.FK_AttributeValue_Attribute" FromRole="AttributeValue" ToRole="Attribute" />
+    <NavigationProperty Name="AttribCombinationDetails" Relationship="EcommerceDBModel.FK_AttribCombinationDetail_AttributeValue" FromRole="AttributeValue" ToRole="AttribCombinationDetail" />
+  </EntityType>
+  <Association Name="FK_AttributeValue_Attribute">
+    <End Type="EcommerceDBModel.Attribute" Role="Attribute" Multiplicity="1" />
+    <End Type="EcommerceDBModel.AttributeValue" Role="AttributeValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeValue">
+        <PropertyRef Name="AttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int64" Nullable="false" />
+    <Property Name="Url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="EcommerceDBModel.FK_ProductImages_Product" FromRole="ProductImage" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="AttribCombinationDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CombinationId" Type="Int64" Nullable="false" />
+    <Property Name="AttributeId" Type="Int64" Nullable="false" />
+    <Property Name="ValueId" Type="Int64" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Attribute" Relationship="EcommerceDBModel.FK_AttribCombinationDetail_Attribute" FromRole="AttribCombinationDetail" ToRole="Attribute" />
+    <NavigationProperty Name="AttributeCombination" Relationship="EcommerceDBModel.FK_AttribCombinationDetail_AttributeCombination" FromRole="AttribCombinationDetail" ToRole="AttributeCombination" />
+    <NavigationProperty Name="AttributeValue" Relationship="EcommerceDBModel.FK_AttribCombinationDetail_AttributeValue" FromRole="AttribCombinationDetail" ToRole="AttributeValue" />
+  </EntityType>
+  <EntityType Name="AttributeCombination">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int64" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AttribCombinationDetails" Relationship="EcommerceDBModel.FK_AttribCombinationDetail_AttributeCombination" FromRole="AttributeCombination" ToRole="AttribCombinationDetail" />
+    <NavigationProperty Name="Stocks" Relationship="EcommerceDBModel.FK_Stock_AttributeCombination" FromRole="AttributeCombination" ToRole="Stock" />
+    <NavigationProperty Name="Product" Relationship="EcommerceDBModel.FK_AttributeCombination_Product" FromRole="AttributeCombination" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_AttribCombinationDetail_Attribute">
+    <End Type="EcommerceDBModel.Attribute" Role="Attribute" Multiplicity="1" />
+    <End Type="EcommerceDBModel.AttribCombinationDetail" Role="AttribCombinationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttribCombinationDetail">
+        <PropertyRef Name="AttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttribCombinationDetail_AttributeCombination">
+    <End Type="EcommerceDBModel.AttributeCombination" Role="AttributeCombination" Multiplicity="1" />
+    <End Type="EcommerceDBModel.AttribCombinationDetail" Role="AttribCombinationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeCombination">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttribCombinationDetail">
+        <PropertyRef Name="CombinationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttribCombinationDetail_AttributeValue">
+    <End Type="EcommerceDBModel.AttributeValue" Role="AttributeValue" Multiplicity="1" />
+    <End Type="EcommerceDBModel.AttribCombinationDetail" Role="AttribCombinationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeValue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttribCombinationDetail">
+        <PropertyRef Name="ValueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AttribCombiId" Type="Int64" Nullable="false" />
+    <Property Name="ProductId" Type="Int64" Nullable="false" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AttributeCombination" Relationship="EcommerceDBModel.FK_Stock_AttributeCombination" FromRole="Stock" ToRole="AttributeCombination" />
+    <NavigationProperty Name="OrderDetails" Relationship="EcommerceDBModel.FK_OrderDetail_Stock" FromRole="Stock" ToRole="OrderDetail" />
+    <NavigationProperty Name="PurchaseDetails" Relationship="EcommerceDBModel.FK_PurchaseDetail_Stock" FromRole="Stock" ToRole="PurchaseDetail" />
+    <NavigationProperty Name="B2BDetail" Relationship="EcommerceDBModel.FK_B2BDetail_Stock" FromRole="Stock" ToRole="B2BDetail" />
+    <NavigationProperty Name="Product" Relationship="EcommerceDBModel.FK_Stock_Product" FromRole="Stock" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_Stock_AttributeCombination">
+    <End Type="EcommerceDBModel.AttributeCombination" Role="AttributeCombination" Multiplicity="1" />
+    <End Type="EcommerceDBModel.Stock" Role="Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeCombination">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="AttribCombiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Banner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImgUrl" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Heading" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="AnimationType" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int64" Nullable="false" />
+    <Property Name="ProductId" Type="Int64" Nullable="false" />
+    <Property Name="StockId" Type="Int64" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Stock" Relationship="EcommerceDBModel.FK_OrderDetail_Stock" FromRole="OrderDetail" ToRole="Stock" />
+    <NavigationProperty Name="Order" Relationship="EcommerceDBModel.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="EcommerceDBModel.FK_OrderDetail_Product" FromRole="OrderDetail" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_OrderDetail_Stock">
+    <End Type="EcommerceDBModel.Stock" Role="Stock" Multiplicity="1" />
+    <End Type="EcommerceDBModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contact" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Purchases" Relationship="EcommerceDBModel.FK_Purchase_Vendor" FromRole="Vendor" ToRole="Purchase" />
+  </EntityType>
+  <EntityType Name="Purchase">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VendorId" Type="Int64" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreateBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Vendor" Relationship="EcommerceDBModel.FK_Purchase_Vendor" FromRole="Purchase" ToRole="Vendor" />
+    <NavigationProperty Name="PurchaseDetails" Relationship="EcommerceDBModel.FK_PurchaseDetail_Purchase" FromRole="Purchase" ToRole="PurchaseDetail" />
+  </EntityType>
+  <EntityType Name="PurchaseDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseId" Type="Int64" Nullable="false" />
+    <Property Name="ProductId" Type="Int64" Nullable="false" />
+    <Property Name="StockId" Type="Int64" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Purchase" Relationship="EcommerceDBModel.FK_PurchaseDetail_Purchase" FromRole="PurchaseDetail" ToRole="Purchase" />
+    <NavigationProperty Name="Stock" Relationship="EcommerceDBModel.FK_PurchaseDetail_Stock" FromRole="PurchaseDetail" ToRole="Stock" />
+    <NavigationProperty Name="Product" Relationship="EcommerceDBModel.FK_PurchaseDetail_Product" FromRole="PurchaseDetail" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_Purchase_Vendor">
+    <End Type="EcommerceDBModel.Vendor" Role="Vendor" Multiplicity="1" />
+    <End Type="EcommerceDBModel.Purchase" Role="Purchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Purchase">
+        <PropertyRef Name="VendorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseDetail_Purchase">
+    <End Type="EcommerceDBModel.Purchase" Role="Purchase" Multiplicity="1" />
+    <End Type="EcommerceDBModel.PurchaseDetail" Role="PurchaseDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseDetail">
+        <PropertyRef Name="PurchaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseDetail_Stock">
+    <End Type="EcommerceDBModel.Stock" Role="Stock" Multiplicity="1" />
+    <End Type="EcommerceDBModel.PurchaseDetail" Role="PurchaseDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseDetail">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="B2BDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StockId" Type="Int64" Nullable="false" />
+    <Property Name="PackageId" Type="Int64" Nullable="false" />
+    <Property Name="OrderID" Type="Int64" Nullable="false" />
+    <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="PackageQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="Stock" Relationship="EcommerceDBModel.FK_B2BDetail_Stock" FromRole="B2BDetail" ToRole="Stock" />
+    <NavigationProperty Name="Order" Relationship="EcommerceDBModel.FK_B2BDetail_Order" FromRole="B2BDetail" ToRole="Order" />
+    <NavigationProperty Name="Package" Relationship="EcommerceDBModel.FK_B2BDetail_Package" FromRole="B2BDetail" ToRole="Package" />
+  </EntityType>
+  <Association Name="FK_B2BDetail_Stock">
+    <End Type="EcommerceDBModel.Stock" Role="Stock" Multiplicity="1" />
+    <End Type="EcommerceDBModel.B2BDetail" Role="B2BDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="B2BDetail">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="B2BDetail" Relationship="EcommerceDBModel.FK_B2BDetail_Order" FromRole="Order" ToRole="B2BDetail" />
+    <NavigationProperty Name="OrderDetails" Relationship="EcommerceDBModel.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
+    <NavigationProperty Name="CustomShirtsOrders" Relationship="EcommerceDBModel.FK_CustomShirtsOrder_Order" FromRole="Order" ToRole="CustomShirtsOrder" />
+  </EntityType>
+  <Association Name="FK_B2BDetail_Order">
+    <End Type="EcommerceDBModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="EcommerceDBModel.B2BDetail" Role="B2BDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="B2BDetail">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Order">
+    <End Type="EcommerceDBModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="EcommerceDBModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Featured" Type="Boolean" Nullable="false" />
+    <Property Name="Sale" Type="Boolean" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Weight" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="PurchasePrice" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="AttributeCombinations" Relationship="EcommerceDBModel.FK_AttributeCombination_Product" FromRole="Product" ToRole="AttributeCombination" />
+    <NavigationProperty Name="OrderDetails" Relationship="EcommerceDBModel.FK_OrderDetail_Product" FromRole="Product" ToRole="OrderDetail" />
+    <NavigationProperty Name="ProductImages" Relationship="EcommerceDBModel.FK_ProductImages_Product" FromRole="Product" ToRole="ProductImage" />
+    <NavigationProperty Name="PurchaseDetails" Relationship="EcommerceDBModel.FK_PurchaseDetail_Product" FromRole="Product" ToRole="PurchaseDetail" />
+    <NavigationProperty Name="Stocks" Relationship="EcommerceDBModel.FK_Stock_Product" FromRole="Product" ToRole="Stock" />
+    <NavigationProperty Name="Category" Relationship="EcommerceDBModel.FK_Product_Category" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="Packages" Relationship="EcommerceDBModel.FK_Package_Product" FromRole="Product" ToRole="Package" />
+    <Property Name="Width" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Height" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <Association Name="FK_AttributeCombination_Product">
+    <End Type="EcommerceDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="EcommerceDBModel.AttributeCombination" Role="AttributeCombination" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AttributeCombination">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Product">
+    <End Type="EcommerceDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="EcommerceDBModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImages_Product">
+    <End Type="EcommerceDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="EcommerceDBModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseDetail_Product">
+    <End Type="EcommerceDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="EcommerceDBModel.PurchaseDetail" Role="PurchaseDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_Product">
+    <End Type="EcommerceDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="EcommerceDBModel.Stock" Role="Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CustomShirt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="ShirtPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="FrontPrintPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="BackPrintPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Weight" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomShirtsOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="ShirtPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="FrontPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BackPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ShirtColor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BackImageUrl" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="FrontImageUrl" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="OrderId" Type="Int64" Nullable="false" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifieBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="EcommerceDBModel.FK_CustomShirtsOrder_Order" FromRole="CustomShirtsOrder" ToRole="Order" />
+  </EntityType>
+  <Association Name="FK_CustomShirtsOrder_Order">
+    <End Type="EcommerceDBModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="EcommerceDBModel.CustomShirtsOrder" Role="CustomShirtsOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomShirtsOrder">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SaleBanner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageUrl" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Text" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PageUrl" Type="String" Nullable="false" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="TextColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Int64" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="IsAdultAlert" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Attributes" Relationship="EcommerceDBModel.FK_Attritube_Category" FromRole="Category" ToRole="Attribute" />
+    <NavigationProperty Name="Childs" Relationship="EcommerceDBModel.FK_Category_Category" FromRole="Category" ToRole="Category1" />
+    <NavigationProperty Name="Parent" Relationship="EcommerceDBModel.FK_Category_Category" FromRole="Category1" ToRole="Category" />
+    <NavigationProperty Name="Products" Relationship="EcommerceDBModel.FK_Product_Category" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_Attritube_Category">
+    <End Type="EcommerceDBModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="EcommerceDBModel.Attribute" Role="Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attribute">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Category">
+    <End Type="EcommerceDBModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="EcommerceDBModel.Category" Role="Category1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category">
+    <End Type="EcommerceDBModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="EcommerceDBModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int64" Nullable="false" />
+    <Property Name="StartQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="EndQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" Nullable="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="B2BDetail" Relationship="EcommerceDBModel.FK_B2BDetail_Package" FromRole="Package" ToRole="B2BDetail" />
+    <NavigationProperty Name="Product" Relationship="EcommerceDBModel.FK_Package_Product" FromRole="Package" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_B2BDetail_Package">
+    <End Type="EcommerceDBModel.Package" Role="Package" Multiplicity="1" />
+    <End Type="EcommerceDBModel.B2BDetail" Role="B2BDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="B2BDetail">
+        <PropertyRef Name="PackageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Package_Product">
+    <End Type="EcommerceDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="EcommerceDBModel.Package" Role="Package" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Package">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsDefualt" Type="Boolean" Nullable="false" />
+    <Property Name="ClientId" Type="Int64" />
+    <Property Name="VendorId" Type="Int64" />
+    <Property Name="ParentId" Type="Int64" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Account1" Relationship="EcommerceDBModel.FK_Account_Account" FromRole="Account" ToRole="Account1" />
+    <NavigationProperty Name="Account2" Relationship="EcommerceDBModel.FK_Account_Account" FromRole="Account1" ToRole="Account" />
+    <NavigationProperty Name="AccountDetails" Relationship="EcommerceDBModel.FK_AccountDetail_Account" FromRole="Account" ToRole="AccountDetail" />
+  </EntityType>
+  <EntityType Name="AccountDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountId" Type="Int64" Nullable="false" />
+    <Property Name="TransactionId" Type="Int64" />
+    <Property Name="Cr" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Dr" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="EcommerceDBModel.FK_AccountDetail_Account" FromRole="AccountDetail" ToRole="Account" />
+    <NavigationProperty Name="Transaction" Relationship="EcommerceDBModel.FK_AccountDetail_Transaction" FromRole="AccountDetail" ToRole="Transaction" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="EcommerceDBModel.UserRoles" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Narration" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiptId" Type="Int64" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AccountDetails" Relationship="EcommerceDBModel.FK_AccountDetail_Transaction" FromRole="Transaction" ToRole="AccountDetail" />
+  </EntityType>
+  <EntityType Name="UserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="EcommerceDBModel.FK_dbo_UserClaims_dbo_Users_UserId" FromRole="UserClaim" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="EcommerceDBModel.FK_dbo_UserLogins_dbo_Users_UserId" FromRole="UserLogin" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="UID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BussinesName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserClaims" Relationship="EcommerceDBModel.FK_dbo_UserClaims_dbo_Users_UserId" FromRole="User" ToRole="UserClaim" />
+    <NavigationProperty Name="UserLogins" Relationship="EcommerceDBModel.FK_dbo_UserLogins_dbo_Users_UserId" FromRole="User" ToRole="UserLogin" />
+    <NavigationProperty Name="Roles" Relationship="EcommerceDBModel.UserRoles" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK_Account_Account">
+    <End Type="EcommerceDBModel.Account" Role="Account" Multiplicity="0..1" />
+    <End Type="EcommerceDBModel.Account" Role="Account1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountDetail_Account">
+    <End Type="EcommerceDBModel.Account" Role="Account" Multiplicity="1" />
+    <End Type="EcommerceDBModel.AccountDetail" Role="AccountDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountDetail">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountDetail_Transaction">
+    <End Type="EcommerceDBModel.Transaction" Role="Transaction" Multiplicity="0..1" />
+    <End Type="EcommerceDBModel.AccountDetail" Role="AccountDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transaction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccountDetail">
+        <PropertyRef Name="TransactionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserClaims_dbo_Users_UserId">
+    <End Type="EcommerceDBModel.User" Role="User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="EcommerceDBModel.UserClaim" Role="UserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserClaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserLogins_dbo_Users_UserId">
+    <End Type="EcommerceDBModel.User" Role="User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="EcommerceDBModel.UserLogin" Role="UserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRoles">
+    <End Type="EcommerceDBModel.Role" Role="Role" Multiplicity="*" />
+    <End Type="EcommerceDBModel.User" Role="User" Multiplicity="*" />
+  </Association>
+</Schema>

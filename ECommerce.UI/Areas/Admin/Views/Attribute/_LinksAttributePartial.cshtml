@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Ecommerce.DAL.Attribute>
+
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        @if (Model != null && Model.Count() > 0)
+        {
+            <thead>
+                <tr>
+                    <th colspan="3">@Model.FirstOrDefault().Category.Name</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Attribute</th>
+                    <th>Values</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    var values = item.AttributeValues.Where(x => x.IsActive == true);
+                    <tr>
+                        <td></td>
+                        <td>@item.Name</td>
+                        <td>
+                            @foreach (var value in values)
+                            {
+                                <label>@value.Value ,</label>
+                            }
+                        </td>
+                        <td>
+                            @Ajax.ActionLink("Delete", "Delete", "Attribute", new { area = "admin", Id = item.Id }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "tbl" }, new { @class = "btn btn-sm btn-danger" })
+                            @Ajax.ActionLink("Edit", "Edit", "Attribute", new { area="admin", Id=item.Id}, new AjaxOptions { HttpMethod="GET", UpdateTargetId= "editRest", OnSuccess= "ShowEdit()" }, new { @class="btn btn-sm btn-info"})
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        }
+        else
+        {
+            <tr>
+                <th></th>
+                <th>Attribute</th>
+                <th>Values</th>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-center text-danger">
+                    No record found.
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

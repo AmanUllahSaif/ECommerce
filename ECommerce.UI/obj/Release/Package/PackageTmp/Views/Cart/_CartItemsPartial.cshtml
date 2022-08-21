@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ECommerce.UI.Models.CartViewModel>
+
+<ul class="dropdown-menu cart-menu">
+    @if ((Model == null || Model.Count() < 1) && ViewBag.Total == null)
+    {
+        <li style="text-align:center;color:red">
+            No Item in cart.
+        </li>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <li class="cart-Item">
+                <div class="col-sm-3">
+                    <img src="@item.Product.ProductImages.FirstOrDefault(x => x.IsActive).Url" class="img-responsive" />
+                </div>
+                <div class="col-sm-5">
+                    <b>@item.Product.Name</b>
+                    
+                    <br />
+                    @item.Quantity X
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Bussines"))
+                    {
+                        @item.PurchasePrice.ToString("0.##");
+                    }
+                    else
+                    {
+                        if (item.Product.Sale)
+                        {
+                            decimal price = item.Product.Price - (item.Product.Price * (item.Product.Discount.GetValueOrDefault() / 100));
+                            <label>@price.ToString("0.##")</label>
+                        }
+                        else
+                        {
+                            <label>@item.Product.Price.ToString("0.##")</label>
+                        }
+                    }
+
+                </div>
+                <div class="col-sm-4">
+                    <a href="javascript:;" data-id="@item.StockId" class="del fa fa-trash-o" style="margin-top:10px;float:right"></a>
+                </div>
+            </li>
+        }
+    }
+        @Html.Action("CustomShirts", "Cart")
+    @if (ViewBag.Total != null)
+    {
+        <li>
+            <div class="col-sm-6">
+                <a href="@Url.Content("~/shopping/checkout")" class="btn btn-primary">Check Out</a>
+            </div>
+            <div class="col-sm-6">
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Bussines"))
+                {
+                    <label style="margin-top:10px">Total : @Model.Sum(x => x.PurchasePrice * x.Quantity).ToString("0.##") $</label>
+                }
+                else
+                {
+                    <label style="margin-top:10px">Total : @ViewBag.Total.ToString("0.##") $</label>
+                }
+            </div>
+        </li>
+    }
+
+</ul>

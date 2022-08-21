@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Ecommerce.DAL.Order>
+
+@using Ecommerce.DAL.Enums
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Created Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        @if (Model != null && Model.Count() > 0)
+        {
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="@Url.Content("~/Admin/Order/b2bdetail/"+item.Id)">@item.Id</a>
+                        </td>
+                        <td>@item.Name</td>
+                        <td>@item.CreatedOn.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            @((item.OrderDetails.Where(x => x.IsActive).Sum(x => x.Price * x.Quantity) + item.CustomShirtsOrders.Sum(x => (x.BackPrice.GetValueOrDefault() + x.FrontPrice.GetValueOrDefault() + x.ShirtPrice) * x.Quantity)).ToString("0.##"))
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <input type="hidden" class="hdnId" value="@item.Id" />
+                                @switch (item.Status)
+                                {
+                                    case (int)OrderStatus.New:
+                                        <button type="button" class="btn btn-default">New</button>
+
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.Inprocess)">In-Process</a></li>
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.Shipped)">Shipped</a></li>
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.Rejected)">Rejected</a></li>
+                                        </ul>
+                                        break;
+                                    case (int)OrderStatus.Inprocess:
+                                        <button type="button" class="btn btn-default">In-Process</button>
+
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.New)">In-Process</a></li>
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.Shipped)">Shipped</a></li>
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.Rejected)">Rejected</a></li>
+                                        </ul>
+                                        break;
+                                    case (int)OrderStatus.Shipped:
+                                        <button type="button" class="btn btn-default">Shipped</button>
+
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.New)">In-Process</a></li>
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.Inprocess)">Shipped</a></li>
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.Rejected)">Rejected</a></li>
+                                        </ul>
+                                        break;
+                                    case (int)OrderStatus.Rejected:
+                                        <button type="button" class="btn btn-default">Rejected</button>
+
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.New)">In-Process</a></li>
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.Shipped)">Shipped</a></li>
+                                            <li><a href="#" class="btnChangeStatus" data-status="@((int)OrderStatus.Inprocess)">Rejected</a></li>
+                                        </ul>
+                                        break;
+                                }
+
+                            </div>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center text-danger"> No record found.</td>
+            </tr>
+        }
+    </table>
+</div>
+
+

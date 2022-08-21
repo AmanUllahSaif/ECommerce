@@ -1,0 +1,48 @@
+﻿@model ECommerce.UI.Models.StockCollectionViewModel
+
+@using Ecommerce.DAL
+
+<div class="table-responsive">
+    @if (ViewBag.Attributes != null)
+    {
+        int count = 0;
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    @foreach (var item in ViewBag.Attributes)
+                {
+                        <th>@item.Name</th>
+                    }
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="rowContainer" >
+                <tr>
+                    @foreach (Ecommerce.DAL.Attribute item in ViewBag.Attributes)
+                {
+                        <td>
+                            @Html.HiddenFor(x => x.Stocks[0].CombinationDetail[count].AttributeId, new { @class="attribId", Value=item.Id})
+                            @Html.DropDownListFor(x => x.Stocks[0].CombinationDetail[count].ValueId, new SelectList(item.AttributeValues.Where(x => x.IsActive == true), "Id", "Value"), "Select Option", new { @class = "form-control attribVal" })
+                            @Html.ValidationMessageFor(x => x.Stocks[0].CombinationDetail[count].ValueId, "", new { @class="attribVld"})
+                        </td>
+                        count++;
+                    }
+                    <td>
+                        @Html.TextBoxFor(x => x.Stocks[0].Quantity, new { @class = "form-control qty" })
+                        @Html.ValidationMessageFor(x => x.Stocks[0].Quantity, "", new { @class="qtyVld"})
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="fa fa-plus-circle btnRwAdd"></a>
+                        <a href="javascript:;" class="fa fa-minus-circle btnRwRmv"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    }
+
+</div>

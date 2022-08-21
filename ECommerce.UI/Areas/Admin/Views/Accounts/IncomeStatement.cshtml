@@ -1,0 +1,140 @@
+﻿@model ECommerce.UI.Areas.Admin.Models.IncomeStatementViewModel
+@{
+    ViewBag.Title = "Income Statement";
+}
+
+<div class="printPanel">
+    <div class="panel panel-default ">
+        <!-- <div class="panel-heading">
+            <h4>Invoice</h4>
+        </div> -->
+        <div class="panel-body">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <h4>
+                        Income Statement <br>
+                    </h4>
+                </div>
+                <div class="pull-right">
+                    <h4 class="text-right"><img src="@Url.Content("~/theme/images/urz2.png")" alt="Avant" style="height:75px"></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pull-right">
+                        <ul class="text-right list-unstyled">
+                            <li><strong>Date:</strong> @DateTime.UtcNow.ToString("dd-MMMM-yyyy")</li>
+                            @*<li><strong>Due:</strong> @Model.CreatedOn.AddDays(3).ToString("dd-MMMM-yyyy")</li>*@
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                            @if (Model != null)
+                            {
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2">
+                                            Revenue
+                                        </th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    @foreach (var item in Model.Revinue)
+                                    {
+                                        <tr>
+                                            <td></td>
+                                            <td>@item.Name</td>
+                                            <td>@(item.Balance*-1)</td>
+                                            <td></td>
+                                        </tr>
+                                    }
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-right">
+                                            Total
+                                        </td>
+                                        <td></td>
+                                        <td>@Model.Revinue.Sum(x => x.Balance*-1)</td>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="2">
+                                            Expense
+                                        </th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    @foreach (var item in Model.Expense)
+                                    {
+                                        <tr>
+                                            <td></td>
+                                            <td>@item.Name</td>
+                                            <td>@item.Balance</td>
+                                            <td></td>
+                                        </tr>
+                                    }
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-right">
+                                            Total
+                                        </td>
+                                        <td></td>
+                                        <td>@Model.Expense.Sum(x => x.Balance)</td>
+                                    </tr>
+                                </tbody>
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="6" class="text-center text-info"> No Record Found.</td>
+                                </tr>
+                            }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="border-radius: 0px;">
+                <div class="col-md-3 col-md-offset-9">
+                    Total Revenue
+                    <hr>
+                    <h3 class="text-right">@(Model.Revinue.Sum(x => x.Balance*-1) - Model.Expense.Sum(x => x.Balance)) </h3>
+                </div>
+            </div>
+            <div class="panel-footer hidden-print">
+                <div class="pull-right">
+                    <a href="javascript:;" class="btn btn-inverse btnPrint"><i class="fa fa-print"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        $('.btnPrint').click(function () {
+            var styleSheets = $('link');
+            var pWin = window.open('', 'Invoice Print', 'height=600,width=800');
+            pWin.document.write('<html><head><title>Purchase</title>');
+            for (var i = 0; i < styleSheets.length; i++) {
+                var linkTag = "<link rel='stylesheet' type='text/css' href='" + $(styleSheets[i]).attr('href') + "' />";
+                pWin.document.write(linkTag);
+            }
+            pWin.document.write('</head><body >');
+            pWin.document.write($('.printPanel').html());
+            pWin.document.write('</body></html>');
+            setTimeout(function () {
+                pWin.print();
+            }, 1000)
+            $(pWin.document).ready(function () {
+                //pWin.print();
+            });
+        })
+    </script>
+}

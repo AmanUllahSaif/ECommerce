@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Ecommerce.DAL.Purchase>
+@{
+    ViewBag.Title = "Index";
+}
+
+@using PagedList
+@using PagedList.Mvc
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+
+        <h4>Purchase</h4>
+        <div class="pull-right">
+            <a href="@Url.Content("~/Admin/Purchase/Create")" class="btn btn-success">Create New</a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Inovice Num</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                @if (Model != null && Model.Count() > 0)
+                {
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.CreatedOn.ToString("dd/MM/yyyy")</td>
+                                <td>
+                                    @item.PurchaseDetails.Sum(x => x.Price * x.Quantity)
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/admin/purchase/Detail/"+item.Id)" class="btn btn-sm btn-primary">View</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="text-right" colspan="4">
+                                @Html.PagedListPager((IPagedList)Model, Page => Url.Action("Index", new { Page}),new PagedListRenderOptions() {Display=PagedListDisplayMode.IfNeeded })
+                            </td>
+                        </tr>
+                    </tfoot>
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4" class="text-danger">No Record Found.</td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+</div>
